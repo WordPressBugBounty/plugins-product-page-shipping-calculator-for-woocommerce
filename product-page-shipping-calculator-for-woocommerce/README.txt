@@ -4,7 +4,7 @@ Donate link: piwebsolution.com
 Tags: shipping calculator, shipping estimate, shipping cost, check woocommerce pincode, check woocommerce shipping
 Requires at least: 3.0.1
 Tested up to: 6.6.1
-Stable tag: 1.3.49.24
+Stable tag: 1.3.49.26
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,13 +47,13 @@ This plugin allows you to show shipping methods available on the product page fo
 &#9989; Consider the quantity user has added in the Quantity field on the product page, and show shipping charge as per that quantity. (Consider quantity option is disabled by default so you need to enable it)
 When this option is enabled:
 
-&#9989; You can configure the plugin to show the shipping cost of the product customer is checking, ignoring other the shipping cost of other products in the cart. This is useful when you have a product that has different shipping cost than other products in the cart.
-
 `
 When product A is not in cart = shipping will be shown as per the quantity set in the quantity field
     
 When product A is present in the cart  = Shipping will be shown as per the quantity set in the quantity field plus the quantity present in the Cart
 `
+
+&#9989; You can configure the plugin to show the shipping cost of the product customer is checking, ignoring other the shipping cost of other products in the cart. This is useful when you have a product that has different shipping cost than other products in the cart.
 
 &#9989; This plugin is compatible with our [PRO Estimate delivery date plugin](https://www.piwebsolution.com/product/pro-estimate-delivery-date-for-woocommerce/?utm_source=product-page-shipping-calculator-description&utm_medium=display&utm_campaign=product-page-shipping-calculator), So you can show estimate delivery date for each of the shipping method 
 
@@ -148,6 +148,9 @@ Yes it is HPOS compatible
 
 
 == Changelog ==
+
+= 1.3.49.26 =
+* Tested for WC 9.3.0
 
 = 1.3.49.24 =
 * Option to show shipping method based on specific product only, ignoring the product in the cart
