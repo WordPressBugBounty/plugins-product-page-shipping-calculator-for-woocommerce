@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              piwebsolution.com
- * @since             1.3.49.30
+ * @since             1.3.49.31
  * @package           Pisol_Product_Page_Shipping_Calculator_Woocommerce
  *
  * @wordpress-plugin
  * Plugin Name:       Product page shipping calculator for WooCommerce
  * Plugin URI:        piwebsolution.com/woocommerce-shipping-calculator
  * Description:       Product page shipping calculator for WooCommerce
- * Version:           1.3.49.30
+ * Version:           1.3.49.31
  * Author:            PI Websolution
  * Author URI:        piwebsolution.com
  * License:           GPL-2.0+
@@ -63,10 +63,10 @@ add_action( 'before_woocommerce_init', function() {
 
 /**
  * Currently plugin version.
- * Start at version 1.3.49.30 and use SemVer - https://semver.org
+ * Start at version 1.3.49.31 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'PISOL_PRODUCT_PAGE_SHIPPING_CALCULATOR_WOOCOMMERCE_VERSION', '1.3.49.30' );
+define( 'PISOL_PRODUCT_PAGE_SHIPPING_CALCULATOR_WOOCOMMERCE_VERSION', '1.3.49.31' );
 
 /**
  * The code that runs during plugin activation.
@@ -112,7 +112,7 @@ function pisol_product_page_shipping_method_plugin_link( $links ) {
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    1.3.49.30
+ * @since    1.3.49.31
  */
 function run_pisol_product_page_shipping_calculator_woocommerce() {
 
