@@ -4,7 +4,7 @@ Donate link: piwebsolution.com
 Tags: shipping calculator, shipping estimate, shipping cost, check woocommerce pincode, check woocommerce shipping
 Requires at least: 3.0.1
 Tested up to: 6.7.1
-Stable tag: 1.3.49.33
+Stable tag: 1.3.49.34
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -148,6 +148,9 @@ Yes it is HPOS compatible
 
 
 == Changelog ==
+
+= 1.3.49.34 =
+* plugins page revised to show our plugins
 
 = 1.3.49.33 =
 * Tested for WC 9.5.0

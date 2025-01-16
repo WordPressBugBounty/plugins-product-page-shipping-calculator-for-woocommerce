@@ -29,7 +29,6 @@ class Pisol_Product_Page_Shipping_Calculator_Woocommerce_Admin {
 			}else{
 				new pisol_ppscw_free_estimate_setting($this->plugin_name);
 			}
-			new pisol_ppscw_other_plugins($this->plugin_name);
 			new pisol_ppscw_warning_messages();
 		}
 	}
