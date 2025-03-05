@@ -251,18 +251,45 @@ class pisol_ppscw_product_page_calculator{
 				$parent_obj = wc_get_product($parent_id);
 				$default_attributes = $parent_obj->get_default_attributes();
 				$variation_attributes = $product->get_variation_attributes( );
-				$variation = self::getAttributes($variation_attributes, $default_attributes);
+				// Get all parent attributes, needed to fetch attribute options.
+				$parent_attributes = $parent_obj->get_attributes();
+				$variation = self::getAttributes($variation_attributes, $default_attributes, $parent_attributes);
 				return $variation;
 		}
 		return $variation;
 	}
 
-	static function getAttributes($variation_attributes, $default_attributes){
+	static function getAttributes($variation_attributes, $default_attributes, $parent_attributes){
 		$list = array();
 		foreach($variation_attributes as $name => $value){
 			$att_name = str_replace('attribute_',"",$name);
 			if(empty($value)){
 				$value = isset($default_attributes[$att_name]) ? $default_attributes[$att_name] : "";
+
+				if(empty($value) && isset($parent_attributes[$att_name])){
+					$attribute_obj = $parent_attributes[ $att_name ];
+					if ( $attribute_obj->get_variation() ) {
+						$options = $attribute_obj->get_options();
+						if ( ! empty( $options ) ) {
+							// If taxonomy based, options are term IDs so convert the first one to slug.
+							if ( $attribute_obj->is_taxonomy() ) {
+								$term = get_term( $options[0] );
+								if ( ! is_wp_error( $term ) && $term ) {
+									$value = $term->slug;
+								} else {
+									$value = 'x';
+								}
+							} else {
+								// For custom attributes, simply use the first option.
+								$value = $options[0];
+							}
+						} else {
+							$value = 'x'; // Fallback if no options found.
+						}
+					} else {
+						$value = 'x'; // Fallback if attribute is not variation-enabled.
+					}
+				}
 			}
 			$list[$name] = $value;
 		}
