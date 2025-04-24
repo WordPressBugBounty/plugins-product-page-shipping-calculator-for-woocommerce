@@ -58,7 +58,7 @@ class pisol_ppscw_popup{
        $button_text = get_option('pi_ppscw_popup_update_address_title', 'Update Address');
        $layout = get_option('pi_ppscw_address_form_layout', 'pi-vertical');
        $form = pisol_ppscw_address_form::getAddressForm($button_text, $layout);
-       echo $this->popupTemplate($form);
+       $this->popupTemplate($form);
        wp_die();
     }
 
@@ -66,16 +66,14 @@ class pisol_ppscw_popup{
         $bg = get_option('pi_ppscw_popup_header_bg_color', '#000000');
         $color = get_option('pi_ppscw_popup_header_text_color', '#FFFFFF');
         $title = get_option('pi_ppscw_popup_title', 'Set your delivery location');
-        ob_start();
+        
         echo '<div class="pisol-ppscw-form-container">';
         echo '<div class="pisol-ppscw-title" style="background-color:'.esc_attr($bg).'; color:'.esc_attr($color).';">'.wp_kses_post($title).'</div>';
         echo '<div class="pisol-ppscw-content">';
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo $form;
         echo '</div>';
         echo '</div>';
-        $html = ob_get_contents();
-        ob_end_clean();
-        return $html;
     }
 }
 

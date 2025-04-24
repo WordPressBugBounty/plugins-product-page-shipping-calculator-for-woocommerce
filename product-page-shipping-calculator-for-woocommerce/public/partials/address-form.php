@@ -18,7 +18,7 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<form class="pi-ppscw-address-form <?php echo $layout; ?>" action="<?php echo admin_url('admin-ajax.php'); ?>" method="post"  onsubmit="return false;">
+<form class="pi-ppscw-address-form <?php echo esc_attr($layout); ?>" action="<?php echo esc_url(admin_url('admin-ajax.php')); ?>" method="post"  onsubmit="return false;">
 		<div class="pi-ppscw-address-form-error"></div>
 		<div class="pi-address-form-fields">
 		<?php if ( apply_filters( 'woocommerce_shipping_calculator_enable_country', true ) ) : ?>

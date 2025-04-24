@@ -57,8 +57,8 @@ class pisol_ppscw_estimate_setting{
     function tab(){
         $this->tab_name = __("Estimate date",'pisol-product-page-shipping-calculator-woocommerce');
         ?>
-        <a class=" pi-side-menu  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo admin_url( 'admin.php?page='.sanitize_text_field($_GET['page']).'&tab='.$this->this_tab ); ?>">
-        <span class="dashicons dashicons-calendar-alt"></span> <?php  echo $this->tab_name; ?> 
+        <a class=" pi-side-menu  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo esc_url(admin_url( 'admin.php?page='.sanitize_text_field($_GET['page']).'&tab='.$this->this_tab )); ?>">
+        <span class="dashicons dashicons-calendar-alt"></span> <?php echo esc_html($this->tab_name); ?> 
         </a>
         <?php
     }
@@ -72,7 +72,7 @@ class pisol_ppscw_estimate_setting{
                 new pisol_class_form_ppscw($setting, $this->setting_key);
             }
         ?>
-        <input type="submit" class="mt-3 btn btn-primary btn-md" value="<?php _e('Save Option','pisol-product-page-shipping-calculator-woocommerce'); ?>" />
+        <input type="submit" class="mt-3 btn btn-primary btn-md" value="<?php esc_attr_e('Save Option','pisol-product-page-shipping-calculator-woocommerce'); ?>" />
         </form>
        <?php
     }

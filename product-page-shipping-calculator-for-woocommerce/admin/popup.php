@@ -79,8 +79,8 @@ class pisol_ppscw_badge_option{
     function tab(){
         $this->tab_name = __("Popup",'pisol-product-page-shipping-calculator-woocommerce');
         ?>
-        <a class="  pi-side-menu  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo admin_url( 'admin.php?page='.sanitize_text_field($_GET['page']).'&tab='.$this->this_tab ); ?>">
-        <span class="dashicons dashicons-twitch"></span> <?php echo $this->tab_name; ?> 
+        <a class="  pi-side-menu  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo esc_url(admin_url( 'admin.php?page='.sanitize_text_field($_GET['page']).'&tab='.$this->this_tab )); ?>">
+        <span class="dashicons dashicons-twitch"></span> <?php echo esc_html($this->tab_name); ?> 
         </a>
         <?php
     }
@@ -94,7 +94,7 @@ class pisol_ppscw_badge_option{
                 new pisol_class_form_ppscw($setting, $this->setting_key);
             }
         ?>
-        <input type="submit" name="submit" id="submit" class="btn btn-primary btn-md my-3" value="<?php echo __('Save Changes','pisol-product-page-shipping-calculator-woocommerce'); ?>">
+        <input type="submit" name="submit" id="submit" class="btn btn-primary btn-md my-3" value="<?php echo esc_attr__('Save Changes','pisol-product-page-shipping-calculator-woocommerce'); ?>">
         </form>
        <?php
     }

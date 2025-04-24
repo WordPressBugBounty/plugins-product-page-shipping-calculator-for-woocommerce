@@ -60,7 +60,7 @@ class pisol_ppscw_menu{
                         <div class='bg-dark'>
                         <div class="row">
                             <div class="col-12 col-sm-2 py-2">
-                                    <a href="https://www.piwebsolution.com/" target="_blank"><img class="img-fluid ml-2" src="<?php echo plugin_dir_url( __FILE__ ); ?>img/pi-web-solution.svg"></a>
+                                    <a href="https://www.piwebsolution.com/" target="_blank"><img class="img-fluid ml-2" src="<?php echo esc_url( plugin_dir_url( __FILE__ ) ); ?>img/pi-web-solution.svg"></a>
                             </div>
                             <div class="col-12 col-sm-10 d-flex text-center small pisol-top-menu">
                                 

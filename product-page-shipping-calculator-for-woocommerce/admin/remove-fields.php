@@ -71,8 +71,8 @@ class pisol_ppscw_remove_fields{
 
     function tab(){
         ?>
-        <a class=" pi-side-menu  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo admin_url( 'admin.php?page='.sanitize_text_field($_GET['page']).'&tab='.$this->this_tab ); ?>">
-        <span class="dashicons dashicons-table-col-delete"></span> <?php echo  $this->tab_name; ?> 
+        <a class=" pi-side-menu  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo esc_url(admin_url( 'admin.php?page='.sanitize_text_field($_GET['page']).'&tab='.$this->this_tab )); ?>">
+        <span class="dashicons dashicons-table-col-delete"></span> <?php echo esc_html($this->tab_name); ?> 
         </a>
         <?php
     }
@@ -86,11 +86,11 @@ class pisol_ppscw_remove_fields{
                 new pisol_class_form_ppscw($setting, $this->setting_key);
             }
         ?>
-        <input type="submit" class="mt-3 btn btn-md btn-primary" value="<?php _e('Save Option','pisol-product-page-shipping-calculator-woocommerce'); ?>" />
+        <input type="submit" class="mt-3 btn btn-md btn-primary" value="<?php esc_attr_e('Save Option','pisol-product-page-shipping-calculator-woocommerce'); ?>" />
         </form>
         <div style="display:none;">
         <div id="hidden-msg" class="alert alert-warning">
-            <b>Remove country option is Disabled for you</b> as You can only disable country field when you Ship product to single country, Right now you have configured WooCommerce to ship to <b>more then one country</b>, You can configure shipping country from <a href="<?php echo admin_url("admin.php?page=wc-settings#woocommerce_store_postcode")?>" target="_blank">Click to configure</a>
+            <b>Remove country option is Disabled for you</b> as You can only disable country field when you Ship product to single country, Right now you have configured WooCommerce to ship to <b>more then one country</b>, You can configure shipping country from <a href="<?php echo esc_url(admin_url("admin.php?page=wc-settings#woocommerce_store_postcode")); ?>" target="_blank">Click to configure</a>
         </div>
         </div>
        <?php

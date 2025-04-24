@@ -59,7 +59,7 @@ class pisol_ppscw_other_plugins{
         <span class="dashicons dashicons-admin-plugins"></span> <?php echo esc_html( $this->tab_name ); ?> 
         </a>
         <a class=" pi-side-menu bg-secondary" target="_blank" href="https://wordpress.org/support/plugin/product-page-shipping-calculator-for-woocommerce/reviews/#bbp_topic_content">
-        <span class="dashicons dashicons-editor-help"></span> <?php _e("GIVE SUGGESTIONS",'pisol-product-page-shipping-calculator-woocommerce'); ?>
+        <span class="dashicons dashicons-editor-help"></span> <?php esc_html_e("GIVE SUGGESTIONS",'pisol-product-page-shipping-calculator-woocommerce'); ?>
         </a>
         <?php
     }

@@ -26,13 +26,13 @@ if($closed == 'open'){
 <div class="pisol-ppscw-alert" id="pisol-ppscw-other-messages"></div>
 <div class="pisol-ppscw-container">
 <?php do_action('pi_ppscw_before_calculate_button'); ?>
-<form class="pisol-woocommerce-shipping-calculator" action="<?php echo admin_url('admin-ajax.php'); ?>" method="post" onsubmit="return false;">
+<form class="pisol-woocommerce-shipping-calculator" action="<?php echo esc_url(admin_url('admin-ajax.php')); ?>" method="post" onsubmit="return false;">
 
 	<?php printf( '<a href="/" class="button pisol-shipping-calculator-button" rel="nofollow">%s</a>', esc_html( $button_text )); ?>
 
 	<?php do_action('pi_ppscw_after_calculate_button'); ?>
 
-	<section class="pisol-shipping-calculator-form" style="<?php echo $style; ?>">
+	<section class="pisol-shipping-calculator-form" style="<?php echo esc_attr($style); ?>">
 	<?php do_action('pi_ppscw_before_calculate_form'); ?>
 	<div id="pisol-ppscw-error" class="pisol-ppscw-error"></div>
 		<?php if ( apply_filters( 'woocommerce_shipping_calculator_enable_country', true ) ) : ?>
