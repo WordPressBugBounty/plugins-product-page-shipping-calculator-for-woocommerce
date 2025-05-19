@@ -21,7 +21,7 @@ class pisol_ppscw_shipping_calculator_review{
         $this->slug = $slug;
         $this->activation_date = "pi_review_activation_date_{$this->slug}";
         $this->saved_value = "pi_review_saved_value_{$this->slug}";
-        $this->review_url = "https://wordpress.org/support/plugin/{$this->slug}/reviews/?rate=5#new-post";
+        $this->review_url = "https://wordpress.org/support/plugin/{$this->slug}/reviews/?filter=5#wp-bbp_topic_content-wrap";
         $this->review_after = 6;
         $this->buy_url = $buy_url;
         $this->price = $price;

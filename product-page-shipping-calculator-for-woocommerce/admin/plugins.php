@@ -58,7 +58,7 @@ class pisol_ppscw_other_plugins{
         <a class=" pi-side-menu  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo esc_url( admin_url( 'admin.php?page='.sanitize_text_field($_GET['page']).'&tab='.$this->this_tab ) ); ?>">
         <span class="dashicons dashicons-admin-plugins"></span> <?php echo esc_html( $this->tab_name ); ?> 
         </a>
-        <a class=" pi-side-menu bg-secondary" target="_blank" href="https://wordpress.org/support/plugin/product-page-shipping-calculator-for-woocommerce/reviews/#bbp_topic_content">
+        <a class=" pi-side-menu bg-secondary" target="_blank" href="https://wordpress.org/support/plugin/product-page-shipping-calculator-for-woocommerce/reviews/?filter=5#wp-bbp_topic_content-wrap">
         <span class="dashicons dashicons-editor-help"></span> <?php esc_html_e("GIVE SUGGESTIONS",'pisol-product-page-shipping-calculator-woocommerce'); ?>
         </a>
         <?php
