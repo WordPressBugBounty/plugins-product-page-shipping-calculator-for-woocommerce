@@ -14,6 +14,7 @@ require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/free-estimate-setti
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/design.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/product.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/remove-fields.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-adv-shipping-promotion.php';
 
 
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-product-page.php';

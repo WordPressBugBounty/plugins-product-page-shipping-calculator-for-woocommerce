@@ -6,3 +6,11 @@
  .bootstrap-wrapper .plugin-card-top h3{
      font-size:18px;
  }
+
+ .tab-icon{
+	width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 8px;
+    display: inline-block;
+}
