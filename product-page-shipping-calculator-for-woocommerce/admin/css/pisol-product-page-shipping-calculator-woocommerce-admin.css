@@ -14,3 +14,62 @@
     margin-right: 8px;
     display: inline-block;
 }
+
+.bootstrap-wrapper .custom-switch:has(#hidden-msg){
+	padding-left:0 !important;
+}
+
+.pisol-form-element-row small{
+	color:var(--dark);
+	margin-top:10px;
+	display:block;
+    font-style:italic;
+    font-size:1rem;
+}
+
+/* side menu */
+.bootstrap-wrapper #pisol-side-menu{
+	background: linear-gradient(135deg, #1a4562, #2f6c8c, #1a4562);
+	color:#fff;
+	padding:10px;
+	border-radius:10px;
+	margin-top:20px;
+	display:flex;
+	flex-direction: column;
+	color:#fff;
+	gap:0.5rem;
+}
+
+.bootstrap-wrapper .pi-sticky{
+	position: sticky;
+	top: 60px;
+}
+
+
+.bootstrap-wrapper #pisol-side-menu a{
+	color:#fff !important;
+	padding:7px 5px !important;
+	transition:all 0.3s ease;
+	letter-spacing: 1.2px;
+}
+
+.bootstrap-wrapper #pisol-side-menu a .dashicons{
+	margin-right:5px;
+}
+
+.bootstrap-wrapper #pisol-side-menu a:hover, .bootstrap-wrapper #pisol-side-menu a.active{
+	text-decoration: none;
+	color: #ccc !important;
+	font-weight:bold;
+}
+
+.bootstrap-wrapper #pisol-side-menu a.bg-primary,.bootstrap-wrapper #pisol-side-menu a.bg-secondary{
+	background: transparent !important;
+	border:0 !important
+}
+
+.bootstrap-wrapper #pisol-side-menu a.bg-primary .dashicons{
+	color: var(--primary) !important;
+}
+
+/* menu done */

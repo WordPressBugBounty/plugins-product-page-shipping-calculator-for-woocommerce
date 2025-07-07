@@ -4,7 +4,7 @@ Donate link: piwebsolution.com
 Tags: shipping calculator, shipping estimate, shipping cost, check woocommerce pincode, check woocommerce shipping
 Requires at least: 3.0.1
 Tested up to: 6.8
-Stable tag: 1.3.49.44
+Stable tag: 1.3.49.46
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -148,6 +148,10 @@ Yes it is HPOS compatible
 
 
 == Changelog ==
+
+= 1.3.49.46 =
+* UI improvement in shipping calculator backend setting page
+* Woocommerce shipping calculator tested for Woocommerce 9.9.5
 
 = 1.3.49.44 =
 * Woocommerce shipping calculator tested for Woocommerce 9.9.3
@@ -307,3 +311,15 @@ Yes it is HPOS compatible
 
 = 1.3.7 =
 * Made compatible with PHP 8.1
+
+== Privacy ==
+
+If you choose to opt in from the plugin settings, or submit optional feedback during deactivation, this plugin may collect basic technical information, including:
+
+- Plugin version  
+- WordPress version  
+- WooCommerce version  
+- Site url
+- Deactivation reason (if submitted)
+
+This data is used solely to improve plugin quality, compatibility, and features. No personal or user-specific data is collected without consent.

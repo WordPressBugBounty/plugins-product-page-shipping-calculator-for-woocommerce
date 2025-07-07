@@ -29,7 +29,7 @@ class pisol_ppscw_remove_fields{
         $this->active_tab = $this->tab != "" ? $this->tab : 'default';
 
         $this->settings = array(
-            array('field'=>'title', 'class'=> 'bg-primary text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Remove address form fields from product page calculator<br><small>Warning: If your shipping zone are based on the field then do not disable it else plugin will not be able to select the zone and show the shipping method</small>", 'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category"),
+            array('field'=>'title', 'class'=> 'bg-dark2 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Remove address form fields from product page calculator", 'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category", "desc"=>__("Warning: If your shipping zone are based on the field then do not disable it else plugin will not be able to select the zone and show the shipping method", 'pisol-product-page-shipping-calculator-woocommerce')),
 
             array('field'=>'pi_ppscw_remove_country', 'label'=>__('Remove country field','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>__('Remove country field if your shipping zone are not dependent on the zone or you only ship to single country','pisol-product-page-shipping-calculator-woocommerce'), 'type'=>'switch', 'default'=>0), 
 
@@ -40,7 +40,7 @@ class pisol_ppscw_remove_fields{
             array('field'=>'pi_ppscw_remove_postcode', 'label'=>__('Remove Postcode/Zip field','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>__('Remove Postcode/Zip field if your shipping zone are not dependent on the postcode','pisol-product-page-shipping-calculator-woocommerce'), 'type'=>'switch', 'default'=>0), 
             
              
-            array('field'=>'title', 'class'=> 'bg-primary text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Remove address form fields from address form (popup)<br><small>Warning: If your shipping zone are based on the field then do not disable it else plugin will not be able to select the zone and show the shipping method</small>", 'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category"),
+            array('field'=>'title', 'class'=> 'bg-dark2 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Remove address form fields from address form (popup)", 'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category", "desc"=>__("Warning: If your shipping zone are based on the field then do not disable it else plugin will not be able to select the zone and show the shipping method", 'pisol-product-page-shipping-calculator-woocommerce')),
 
             array('field'=>'pi_ppscw_remove_country_add_form', 'label'=>__('Remove country field','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>__('Remove country field if your shipping zone are not dependent on the zone or you only ship to single country','pisol-product-page-shipping-calculator-woocommerce'), 'type'=>'switch', 'default'=>0), 
 
@@ -86,7 +86,7 @@ class pisol_ppscw_remove_fields{
                 new pisol_class_form_ppscw($setting, $this->setting_key);
             }
         ?>
-        <input type="submit" class="mt-3 btn btn-md btn-primary" value="<?php esc_attr_e('Save Option','pisol-product-page-shipping-calculator-woocommerce'); ?>" />
+        <input type="submit" class="my-3 btn btn-md btn-primary" value="<?php esc_attr_e('Save Option','pisol-product-page-shipping-calculator-woocommerce'); ?>" />
         </form>
         <div style="display:none;">
         <div id="hidden-msg" class="alert alert-warning">

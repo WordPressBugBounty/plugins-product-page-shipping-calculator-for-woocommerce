@@ -24,13 +24,14 @@ class pisol_ppscw_badge_option{
         $this->active_tab = (isset($_GET['tab'])) ? sanitize_text_field($_GET['tab']) : 'default';
 
         $this->settings = array(
-            
-            
-                array('field'=>'pi_ppscw_enable_badge',  'label'=>__("Enable delivery location in popup",'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"switch", 'default'=>0, 'desc'=> __('This will add a button to your website clicking on which opens a popup to insert the delivery location','pisol-product-page-shipping-calculator-woocommerce')),
 
-                array('field'=>'pi_ppscw_address_form_working', 'label'=>__('Working of popup','pisol-product-page-shipping-calculator-woocommerce'),'default'=>'save-location', 'type'=>'select','value'=> array('save-location'=> __('Use for getting location','pisol-product-page-shipping-calculator-woocommerce'), 'show-shipping-available' => __('Show if shipping is available based on the shipping zone','pisol-product-page-shipping-calculator-woocommerce'), 'show-shipping-available-method' => __('Show if shipping is available based and also show shipping methods','pisol-product-page-shipping-calculator-woocommerce'))),
+            array('field'=>'title', 'class'=> 'bg-dark2 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Popup setting", 'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category"),
+            
+                array('field'=>'pi_ppscw_enable_badge',  'label'=>__("Enable delivery location in popup",'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"switch", 'default'=>0, 'desc'=> __('Adds a button to your site that opens a popup for users to enter their delivery location','pisol-product-page-shipping-calculator-woocommerce')),
 
-                array('field'=>'title', 'class'=> 'bg-primary text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Popup button",'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category"),
+                array('field'=>'pi_ppscw_address_form_working', 'label'=>__('Working of popup','pisol-product-page-shipping-calculator-woocommerce'),'default'=>'save-location', 'type'=>'ppscw_radio_select','value'=> array('save-location'=> __('Only collects the delivery location from the user','pisol-product-page-shipping-calculator-woocommerce'), 'show-shipping-available' => __('Checks if the entered location is serviceable using WooCommerce shipping zones','pisol-product-page-shipping-calculator-woocommerce'), 'show-shipping-available-method' => __('Shows shipping availability and displays the available shipping methods','pisol-product-page-shipping-calculator-woocommerce'))),
+
+                array('field'=>'title', 'class'=> 'bg-dark2 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Popup button",'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category"),
 
                 array('field'=>'pi_ppscw_badge_position', 'label'=>__('Button Position','pisol-product-page-shipping-calculator-woocommerce'), 'type'=>'select', 'value'=>array('top-left' =>__('Top Left','pisol-product-page-shipping-calculator-woocommerce'), 'top-right'=>__('Top Right','pisol-product-page-shipping-calculator-woocommerce'),  'bottom-left'=>__('Bottom Left','pisol-product-page-shipping-calculator-woocommerce'), 'bottom-right'=>__('Bottom Right','pisol-product-page-shipping-calculator-woocommerce'), 'left-center'=>__('Left Center','pisol-product-page-shipping-calculator-woocommerce'), 'right-center'=>__('Right Center','pisol-product-page-shipping-calculator-woocommerce')), 'default'=>'bottom-right','desc'=>""), 
 
@@ -42,9 +43,9 @@ class pisol_ppscw_badge_option{
                 
                 array('field'=>'pi_ppscw_badge_text_color', 'type'=>'color', 'default'=>'#ffffff','label'=>__('Button text color','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
 
-                array('field'=>'title', 'class'=> 'bg-primary text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Popup",'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category"),
+                array('field'=>'title', 'class'=> 'bg-dark2 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Popup",'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category"),
 
-                array('field'=>'pi_ppscw_address_form_layout', 'label'=>__('Popup layout','pisol-product-page-shipping-calculator-woocommerce'),'default'=>'pi-vertical', 'type'=>'select','value'=> array('pi-vertical'=> __('Vertical layout','pisol-product-page-shipping-calculator-woocommerce'), 'pi-horizontal' => __('Horizontal layout','pisol-product-page-shipping-calculator-woocommerce'))),
+                array('field'=>'pi_ppscw_address_form_layout', 'label'=>__('Popup layout','pisol-product-page-shipping-calculator-woocommerce'),'default'=>'pi-vertical', 'type'=>'ppscw_radio_select','value'=> array('pi-vertical'=> __('Vertical layout','pisol-product-page-shipping-calculator-woocommerce'), 'pi-horizontal' => __('Horizontal layout','pisol-product-page-shipping-calculator-woocommerce'))),
 
                 array('field'=>'pi_ppscw_popup_title', 'type'=>'text', 'default'=>'Set your delivery location','label'=>__('Popup title','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
 
@@ -94,7 +95,7 @@ class pisol_ppscw_badge_option{
                 new pisol_class_form_ppscw($setting, $this->setting_key);
             }
         ?>
-        <input type="submit" name="submit" id="submit" class="btn btn-primary btn-md my-3" value="<?php echo esc_attr__('Save Changes','pisol-product-page-shipping-calculator-woocommerce'); ?>">
+        <input type="submit" name="submit" id="submit" class="btn btn-primary btn-md my-3" value="<?php echo esc_attr__('Save Option','pisol-product-page-shipping-calculator-woocommerce'); ?>">
         </form>
        <?php
     }

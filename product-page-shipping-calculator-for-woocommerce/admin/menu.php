@@ -71,10 +71,12 @@ class pisol_ppscw_menu{
             </div>
             <div class="row">
                 <div class="col-12">
-                <div class="bg-light border pl-3 pr-3 pb-3 pt-0">
+                <div class="bg-light border pl-3 pr-3 pt-0">
                     <div class="row">
-                        <div class="col-12 col-md-2 px-0 border-right">
-                            <?php do_action($this->plugin_name.'_tab'); ?>
+                        <div class="col-12 col-md-3 border-right">
+                            <div id="pisol-side-menu" class="mb-4 rounded pi-sticky">
+                                <?php do_action($this->plugin_name.'_tab'); ?>
+                            </div>
                         </div>
                         <div class="col">
                         <?php do_action($this->plugin_name.'_tab_content'); ?>

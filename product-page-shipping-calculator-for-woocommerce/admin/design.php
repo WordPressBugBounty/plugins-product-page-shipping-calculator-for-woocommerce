@@ -29,7 +29,7 @@ class pisol_ppscw_design_setting{
 
         $this->settings = array(
 
-            array('field'=>'title', 'class'=> 'bg-primary text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Box showing result of shipping methods", 'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category"),
+            array('field'=>'title', 'class'=> 'bg-dark2 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Box showing result of shipping methods", 'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category"),
 
             array('field'=>'pi_ppscw_msg_background_color', 'label'=>__('Background color of shipping methods','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'color', 'default'=> '#cccccc', 'desc'=>__('Background color of the area where the result are shown','pisol-product-page-shipping-calculator-woocommerce')),
             
@@ -39,7 +39,7 @@ class pisol_ppscw_design_setting{
 
             array('field'=>'pi_ppscw_msg_font_color_shipping_cost', 'label'=>__('Text color of shipping charges','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'color', 'default'=> '#000000', 'desc'=>__('Text color of the shipping method price','pisol-product-page-shipping-calculator-woocommerce')),
 
-            array('field'=>'title', 'class'=> 'bg-primary text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Button", 'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category"),
+            array('field'=>'title', 'class'=> 'bg-dark2 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Button", 'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category"),
 
             array('field'=>'pi_ppscw_calculate_shipping_bg_color', 'label'=>__('Calculate shipping button background color','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'color', 'default'=> '', 'desc'=>__('Leave blank and it will follow your theme button color','pisol-product-page-shipping-calculator-woocommerce')),
 
@@ -85,7 +85,7 @@ class pisol_ppscw_design_setting{
                 new pisol_class_form_ppscw($setting, $this->setting_key);
             }
         ?>
-        <input type="submit" class="mt-3 btn btn-primary btn-md" value="<?php esc_attr_e('Save Option','pisol-product-page-shipping-calculator-woocommerce'); ?>" />
+        <input type="submit" class="my-3 btn btn-primary btn-md" value="<?php esc_attr_e('Save Option','pisol-product-page-shipping-calculator-woocommerce'); ?>" />
         </form>
        <?php
     }
