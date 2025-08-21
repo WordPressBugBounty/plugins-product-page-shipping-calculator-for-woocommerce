@@ -90,7 +90,7 @@ class pisol_ppscw_remove_fields{
         </form>
         <div style="display:none;">
         <div id="hidden-msg" class="alert alert-warning">
-            <b>Remove country option is Disabled for you</b> as You can only disable country field when you Ship product to single country, Right now you have configured WooCommerce to ship to <b>more then one country</b>, You can configure shipping country from <a href="<?php echo esc_url(admin_url("admin.php?page=wc-settings#woocommerce_store_postcode")); ?>" target="_blank">Click to configure</a>
+            <b>Remove country option is Disabled for you</b> as You can only disable country field when you Ship product to single country, Right now you have configured WooCommerce to ship to <b>more than one country</b>, You can configure shipping country from <a href="<?php echo esc_url(admin_url("admin.php?page=wc-settings#woocommerce_store_postcode")); ?>" target="_blank">Click to configure</a>
         </div>
         </div>
        <?php

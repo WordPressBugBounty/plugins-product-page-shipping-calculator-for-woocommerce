@@ -49,7 +49,7 @@ class pisol_ppscw_badge_option{
 
                 array('field'=>'pi_ppscw_popup_title', 'type'=>'text', 'default'=>'Set your delivery location','label'=>__('Popup title','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
 
-                array('field'=>'pi_ppscw_details_saved', 'label'=>__('Your details are saved','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'text', 'default'=>__('Your details are saved','pisol-product-page-shipping-calculator-woocommerce'), 'desc'=>__("This is shown when the detail are saved from the popup form", 'pisol-product-page-shipping-calculator-woocommerce')),
+                array('field'=>'pi_ppscw_details_saved', 'label'=>__('Your details are saved','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'text', 'default'=>__('Your details are saved','pisol-product-page-shipping-calculator-woocommerce'), 'desc'=>__("This is shown when the details are saved from the popup form", 'pisol-product-page-shipping-calculator-woocommerce')),
 
                 array('field' => 'pi_ppscw_popup_update_address_title', 'type' => 'text', 'default' => 'Update Address','label' => __('Update address button','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
 

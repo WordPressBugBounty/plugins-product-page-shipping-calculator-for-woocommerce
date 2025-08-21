@@ -4,7 +4,7 @@ Donate link: piwebsolution.com
 Tags: shipping calculator, shipping estimate, shipping cost, check woocommerce pincode, check woocommerce shipping
 Requires at least: 3.0.1
 Tested up to: 6.8
-Stable tag: 1.3.49.47
+Stable tag: 1.3.49.49
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,7 +16,7 @@ This plugin allows you to show shipping methods available on the product page fo
 
 &#9989; Check **available shipping methods** to your area
 
-&#9989; Customer can know if the **product can be shipped to there location or not**, so they don't have to go to checkout page to find out that you don't ship to there area
+&#9989; Customer can know if the **product can be shipped to their location or not**, so they don't have to go to checkout page to find out that you don't ship to their area
 
 &#9989; Plugin show the available shipping method even when customer has not added his address, plugin show the method based on the shipping zone assigned to customer by WooCommerce
 
@@ -93,10 +93,10 @@ Yes you can add your language to the plugin
 When you will use this plugin along with our [PRO Estimate delivery date plugin](https://www.piwebsolution.com/product/pro-estimate-delivery-date-for-woocommerce/?utm_source=product-page-shipping-calculator-description&utm_medium=display&utm_campaign=product-page-shipping-calculator) then you will be able to show the estimate date for each of the shipping method
 
 = Will it show shipping tax =
-It follows your WooCommerce Tax setting, so if you have set it to show price including tax then it will show the shipping cost including tax next to the shipping method, but if you have configured it wo show cost excluding tax then it will show only cost and not tax
+It follows your WooCommerce Tax setting, so if you have set it to show price including tax then it will show the shipping cost including tax next to the shipping method, but if you have configured it to show cost excluding tax then it will show only cost and not tax
 
 = Can I change the position of the calculator =
-Yes, at preset we have given 2 position option one is above and below the add to cart button on product page.
+Yes, at present we have given 2 position option one is above and below the add to cart button on product page.
 
 = Don't want shipping to be calculated automatically =
 There is an option to disable the auto loading of estimate, once disabled the estimate will not load automatically, user will have to manually get it calculated
@@ -197,7 +197,7 @@ Yes it is HPOS compatible
 
 = 1.3.49.24 =
 * Option to show shipping method based on specific product only, ignoring the product in the cart
-* now js adds the calculated shipping cost based on the container class, this allow us to show shipping cost even if there are multiple form present on the page
+* now JS adds the calculated shipping cost based on the container class, this allow us to show shipping cost even if there are multiple form present on the page
 
 = 1.3.49.23 =
 * Tested for WC 9.2.0
@@ -289,8 +289,8 @@ Yes it is HPOS compatible
 * Tested for WC 7.6.0
 
 = 1.3.21 =
-* Option added to load user location data by ajax to avoind poduct page caching
-* form mager updated to v3.7
+* Option added to load user location data by ajax to avoid product page caching
+* form manager updated to v3.7
 * Tested for WP 6.2.0 
 
 = 1.3.19 =
@@ -304,7 +304,7 @@ Yes it is HPOS compatible
 * $rate undefined when using popup for getting location only fixed
 
 = 1.3.13 =
-* Js error fixed 
+* JS error fixed 
 
 = 1.3.12 =
 * Changed ajax hook from admin-ajax.php to wc_ajax 
