@@ -97,7 +97,7 @@ defined( 'ABSPATH' ) || exit;
 
 		</div>
 
-		<p class="pi-address-form-submit"><button type="submit" name="calc_shipping" value="1" class="button pisol-update-address-button"><?php esc_html_e( $update_address_btn_text ); ?></button></p>
+		<p class="pi-address-form-submit"><button type="submit" name="calc_shipping" value="1" class="button pisol-update-address-button"><?php echo esc_html( $update_address_btn_text ); ?></button></p>
 		<?php wp_nonce_field( 'pisol-ppscw-address-form', 'pisol-ppscw-address-form-nonce' ); ?>
 	
     <input type="hidden" name="action" value="pisol_save_address_form">

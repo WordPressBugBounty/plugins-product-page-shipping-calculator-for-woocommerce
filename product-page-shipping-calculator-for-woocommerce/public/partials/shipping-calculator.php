@@ -110,7 +110,7 @@ if($closed == 'open'){
 			</p>
 		<?php endif; ?>
 
-		<p><button type="submit" name="calc_shipping" value="1" class="button pisol-update-address-button"><?php esc_html_e( $update_address_btn_text ); ?></button></p>
+		<p><button type="submit" name="calc_shipping" value="1" class="button pisol-update-address-button"><?php echo esc_html( $update_address_btn_text ); ?></button></p>
 		<?php wp_nonce_field( 'pisol-woocommerce-shipping-calculator', 'pisol-woocommerce-shipping-calculator-nonce' ); ?>
 		<?php do_action('pi_ppscw_after_calculate_form'); ?>
 	</section>

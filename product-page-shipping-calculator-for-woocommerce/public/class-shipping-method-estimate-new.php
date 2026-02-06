@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 use PISOL\EDD\BASE\OrderEstimateCalculator;
 use PISOL\EDD\BASE\ShippingMethod;
 use PISOL\EDD\BASE\Message;

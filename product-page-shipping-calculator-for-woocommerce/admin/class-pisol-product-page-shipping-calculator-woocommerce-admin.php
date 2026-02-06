@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 class Pisol_Product_Page_Shipping_Calculator_Woocommerce_Admin {
 
 	

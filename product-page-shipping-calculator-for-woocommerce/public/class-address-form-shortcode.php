@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 class pisol_ppscw_address_form_shortcode{
     function __construct(){

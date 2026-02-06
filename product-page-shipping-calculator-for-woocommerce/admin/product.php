@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 class pisol_ppscw_product_options{
     public function __construct( ) {
@@ -10,7 +13,7 @@ class pisol_ppscw_product_options{
 
     function productTab($tabs){
         $tabs['pisol_ppscw_tab'] = array(
-            'label'    => 'Shipping calculator',
+            'label'    => __('Shipping calculator', 'pisol-product-page-shipping-calculator-woocommerce'),
             'target'   => 'pisol_ppscw',
             'priority' => 21,
             'class' => 'hide_if_grouped'
@@ -21,7 +24,7 @@ class pisol_ppscw_product_options{
     function calculatorSetting() {
 		echo '<div id="pisol_ppscw" class="panel woocommerce_options_panel hidden">';
 		woocommerce_wp_select( array(
-            'label' => __("Disable shipping cost"), 
+            'label' => __("Disable shipping cost", 'pisol-product-page-shipping-calculator-woocommerce'), 
             'id' => 'pisol_disable_shipping_calculator', 
             'name' => 'pisol_disable_shipping_calculator', 
             'description' => __("You can disable shipping calculation for this product",'pisol-product-page-shipping-calculator-woocommerce'),

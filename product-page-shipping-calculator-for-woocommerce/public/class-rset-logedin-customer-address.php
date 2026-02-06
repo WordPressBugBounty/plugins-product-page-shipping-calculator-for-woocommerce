@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 class pisol_ppscw_reset_logedin_customer_address{
     function __construct(){

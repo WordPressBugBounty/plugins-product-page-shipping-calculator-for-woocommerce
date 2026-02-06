@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 class pisol_ppscw_address_form{
 
@@ -84,12 +87,12 @@ class pisol_ppscw_address_form{
 	}
 
     function errorTemplate($msg){
-        $msg = strip_tags($msg);
+        $msg = wp_strip_all_tags($msg);
         return '<div class="pi-address-form-error">'.$msg.'</div>';
     }
 
     function successTemplate($msg, $shipping_methods = array()){
-        $msg = strip_tags($msg);
+        $msg = wp_strip_all_tags($msg);
         $methods = $this->getShippingMethod($shipping_methods);
         return '<div class="pi-address-form-success">'.$msg.$methods.'</div>';
     }
