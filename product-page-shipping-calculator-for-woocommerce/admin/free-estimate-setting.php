@@ -69,7 +69,7 @@ class pisol_ppscw_free_estimate_setting{
     function tab_content(){
        ?>
         <div class="alert alert-info h3 my-3 text-center">
-        Below settings only work when you have <a target="_blank" href="https://www.piwebsolution.com/product/pro-estimate-delivery-date-for-woocommerce/?utm_source=product-page-shipping-calculator-installed&utm_medium=display&utm_campaign=product-page-shipping-calculator">PRO Estimate delivery date plugin</a>, it adds the estimate delivery date for each of the shipping method <br><a href="https://www.piwebsolution.com/product/pro-estimate-delivery-date-for-woocommerce/?utm_source=product-page-shipping-calculator-installed&utm_medium=display&utm_campaign=product-page-shipping-calculator" target="_blank" class="btn btn-lg mt-2 btn-primary">Check out Pro Estimate Delivery date plugin</a>
+        Below settings only work when you have <a target="_blank" href="https://www.piwebsolution.com/product/pro-estimate-delivery-date-for-woocommerce/?utm_source=product-page-shipping-calculator-free-plugin&utm_medium=display&utm_campaign=product-page-shipping-calculator">PRO Estimate delivery date plugin</a>, it adds the estimate delivery date for each of the shipping method <br><a href="https://www.piwebsolution.com/product/pro-estimate-delivery-date-for-woocommerce/?utm_source=product-page-shipping-calculator-free-plugin&utm_medium=display&utm_campaign=product-page-shipping-calculator" target="_blank" class="btn btn-lg mt-2 btn-primary">Check out Pro Estimate Delivery date plugin</a>
         </div>
         <img class="img-fluid" src="<?php echo esc_url(plugin_dir_url( __FILE__ )); ?>img/product.png">
         <form method="post" action="options.php"  class="pisol-setting-form exclude-quick-save">
