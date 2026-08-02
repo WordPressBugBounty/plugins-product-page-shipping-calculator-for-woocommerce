@@ -8,12 +8,35 @@
 }
 
 .pi-address-form-success{
-    background:rgba(40, 108, 40, 0.945);
+    background:#e5847a;
     padding:7px 15px;
     color:#fff;
     margin-top:7px;
     margin-bottom:7px;
     border-radius:4px;
+}
+
+.pi-address-form-success .pisol-ppscw-shipping-method-list{
+    margin-top:10px;
+    margin-bottom:10px;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.pi-address-form-success .pisol-ppscw-shipping-method-list li{
+    margin-bottom: 5px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.pi-address-form-success .pisol-ppscw-shipping-method-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #fff;
+    font-weight: bold;
+    font-size:20px;
+
 }
 
 .pi-ppscw-address-form input,
@@ -65,78 +88,6 @@
     margin-top:20px;
 }
 
-/* badge */
-.pisol-ppscw-badge-icon {
-    max-height: 20px;
-    width: auto;
-    display: inline-block;
-    margin-right: 15px;
-}
-
-#pisol-ppscw-badge{
-    display:flex;
-    align-items:center;
-    padding:10px;
-    background:#000000;
-    color:#fff;
-    text-decoration: none;
-}
-
-#pisol-ppscw-badge-container.pisol-badge-bottom-right{
-    position:fixed;
-    bottom:0;
-    right:20px;
-    z-index:100000000000000000000;
-}
-
-#pisol-ppscw-badge-container.pisol-badge-bottom-left{
-    position:fixed;
-    bottom:0;
-    left:20px;
-    z-index:100000000000000000000;
-}
-
-#pisol-ppscw-badge-container.pisol-badge-top-right{
-    position:fixed;
-    top:0;
-    right:20px;
-    z-index:100000000000000000000;
-}
-
-#pisol-ppscw-badge-container.pisol-badge-top-left{
-    position:fixed;
-    top:0;
-    left:20px;
-    z-index:100000000000000000000;
-}
-
-#pisol-ppscw-badge-container.pisol-badge-right-center{
-    position:fixed;
-    top:50%;
-    right:0px;
-    z-index:100000000000000000000;
-}
-
-#pisol-ppscw-badge-container.pisol-badge-left-center{
-    position:fixed;
-    top:50%;
-    left:0px;
-    z-index:100000000000000000000;
-}
-
-#pisol-ppscw-badge-container{
-    z-index:100000000000000000000 !important;
-}
-
-#pisol-ppscw-badge-container.pisol-badge-right-center a{
-    transform: rotate(-90deg);
-}
-
-#pisol-ppscw-badge-container.pisol-badge-left-center a{
-    transform: rotate(90deg);
-}
-/* end badge */
-
 .pisol-ppscw-form-container{
     width:70%;
     background:#fff;
@@ -185,4 +136,64 @@
     background-size: 20px 20px;
     z-index:100;
     top:0px;
+}
+
+.pisol-ppscw-form-container .pisol-update-address-button{
+    background:var(--pisol-form-update-address-button-bg-color);
+    color:var(--pisol-form-update-address-button-text-color);
+    display: inline-block;
+    padding: 13px 24px;
+    border-radius: 6px;
+    border: none;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.pisol-ppscw-form-container .pi-ppscw-address-form input.input-text[type="text"],
+.pisol-ppscw-form-container .pi-ppscw-address-form select.state_select,
+.pisol-ppscw-form-container .pi-ppscw-address-form select.country_select {
+    display: block;
+    width: 100%;
+    border: 1.5px solid #d8dce0;
+    padding: 12px 14px;
+    border-radius: 6px;
+    font-size: 15px;
+    line-height: 1.6;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: #2c3e50;
+    font-family: inherit;
+}
+
+.pisol-ppscw-form-container .pi-ppscw-address-form input[type="text"]::placeholder,
+.pisol-ppscw-form-container .pi-ppscw-address-form select {
+    color: #95a5a6;
+}
+
+.pisol-ppscw-form-container .pi-ppscw-address-form input[type="text"]:hover,
+.pisol-ppscw-form-container .pi-ppscw-address-form select:hover {
+    border-color: #b0b8c0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.pisol-ppscw-form-container .pi-ppscw-address-form input[type="text"]:focus,
+.pisol-ppscw-form-container .pi-ppscw-address-form select:focus {
+    outline: none;
+    border-color: #0073aa;
+    box-shadow: 0 0 0 4px rgba(0, 115, 170, 0.12), inset 0 1px 2px rgba(0, 0, 0, 0.04);
+    background-color: #ffffff;
+}
+
+.pi-address-form-submit{
+    margin-bottom:0px;
 }

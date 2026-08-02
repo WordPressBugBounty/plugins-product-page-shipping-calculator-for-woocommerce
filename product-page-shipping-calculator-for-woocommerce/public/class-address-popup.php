@@ -28,7 +28,7 @@ class pisol_ppscw_popup{
 
         if(is_cart() || is_checkout()) return;
 
-        $bg = get_option('pi_ppscw_badge_bg_color', '#000000');
+        $bg = get_option('pi_ppscw_badge_bg_color', '#e74c3c');
         $color = get_option('pi_ppscw_badge_text_color', '#FFFFFF');
 
         $this->text = get_option('pi_ppscw_badge_text', 'Delivery location');
@@ -66,11 +66,11 @@ class pisol_ppscw_popup{
     }
 
     function popupTemplate($form){
-        $bg = get_option('pi_ppscw_popup_header_bg_color', '#000000');
+        $bg = get_option('pi_ppscw_popup_header_bg_color', '#e74c3c');
         $color = get_option('pi_ppscw_popup_header_text_color', '#FFFFFF');
         $title = get_option('pi_ppscw_popup_title', 'Set your delivery location');
-        
-        echo '<div class="pisol-ppscw-form-container">';
+        $template = get_option('pi_ppscw_design_template','pi-template-1');
+        echo '<div class="pisol-ppscw-form-container '.esc_attr($template).'">';
         echo '<div class="pisol-ppscw-title" style="background-color:'.esc_attr($bg).'; color:'.esc_attr($color).';">'.wp_kses_post($title).'</div>';
         echo '<div class="pisol-ppscw-content">';
         // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

@@ -68,8 +68,17 @@ class pisol_ppscw_free_estimate_setting{
 
     function tab_content(){
        ?>
-        <div class="alert alert-info h3 my-3 text-center">
-        Below settings only work when you have <a target="_blank" href="https://www.piwebsolution.com/product/pro-estimate-delivery-date-for-woocommerce/?utm_source=product-page-shipping-calculator-free-plugin&utm_medium=display&utm_campaign=product-page-shipping-calculator">PRO Estimate delivery date plugin</a>, it adds the estimate delivery date for each of the shipping method <br><a href="https://www.piwebsolution.com/product/pro-estimate-delivery-date-for-woocommerce/?utm_source=product-page-shipping-calculator-free-plugin&utm_medium=display&utm_campaign=product-page-shipping-calculator" target="_blank" class="btn btn-lg mt-2 btn-primary">Check out Pro Estimate Delivery date plugin</a>
+        <div class="alert alert-info alert-dismissible fade show border-0 shadow-sm mt-3" role="alert" style="border-left: 4px solid #0c5460;">
+            <div class="d-flex align-items-center mb-3">
+                <span class="dashicons dashicons-info" style="font-size: 28px; margin-right: 12px; color: #0c5460;"></span>
+                <h4 class="mb-0" style="color: #0c5460; font-weight: 600;">Pro Features Require Extension</h4>
+            </div>
+            <p class="mb-3" style="font-size: 15px; line-height: 1.6; color: #333;">
+                Below settings only work when you have the <a target="_blank" href="https://www.piwebsolution.com/product/pro-estimate-delivery-date-for-woocommerce/?utm_source=product-page-shipping-calculator-free-plugin&utm_medium=display&utm_campaign=product-page-shipping-calculator" style="color: #0c5460; font-weight: 500; text-decoration: underline;">PRO Estimate delivery date plugin</a> installed. It adds the estimate delivery date for each shipping method.
+            </p>
+            <a href="https://www.piwebsolution.com/product/pro-estimate-delivery-date-for-woocommerce/?utm_source=product-page-shipping-calculator-free-plugin&utm_medium=display&utm_campaign=product-page-shipping-calculator" target="_blank" class="btn btn-primary btn-sm" style="border-radius: 4px; font-weight: 600; padding: 8px 20px;">
+                <span class="dashicons dashicons-arrow-right" style="font-size: 14px; margin-right: 6px; vertical-align: middle;"></span>Check out Pro Estimate Delivery Date Plugin
+            </a>
         </div>
         <img class="img-fluid" src="<?php echo esc_url(plugin_dir_url( __FILE__ )); ?>img/product.png">
         <form method="post" action="options.php"  class="pisol-setting-form exclude-quick-save">

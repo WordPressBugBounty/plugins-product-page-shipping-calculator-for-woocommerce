@@ -42,7 +42,7 @@ class pisol_ppscw_badge_option{
 
                 array('field'=>'pi_ppscw_badge_icon', 'type'=>'image', 'default'=>'','label'=>__('Button Icon image','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
 
-                array('field'=>'pi_ppscw_badge_bg_color', 'type'=>'color', 'default'=>'#000000','label'=>__('Button background color','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
+                array('field'=>'pi_ppscw_badge_bg_color', 'type'=>'color', 'default'=>'#e74c3c','label'=>__('Button background color','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
                 
                 array('field'=>'pi_ppscw_badge_text_color', 'type'=>'color', 'default'=>'#ffffff','label'=>__('Button text color','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
 
@@ -56,7 +56,7 @@ class pisol_ppscw_badge_option{
 
                 array('field' => 'pi_ppscw_popup_update_address_title', 'type' => 'text', 'default' => 'Update Address','label' => __('Update address button','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
 
-                array('field'=>'pi_ppscw_popup_header_bg_color', 'type'=>'color', 'default'=>'#000000','label'=>__('Popup header background color','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
+                array('field'=>'pi_ppscw_popup_header_bg_color', 'type'=>'color', 'default'=>'#e74c3c','label'=>__('Popup header background color','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
 
                 array('field'=>'pi_ppscw_popup_header_text_color', 'type'=>'color', 'default'=>'#FFFFFF','label'=>__('Popup header text color','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
                 

@@ -26,34 +26,23 @@ class pisol_ppscw_design{
         $msg_general_text_color = get_option('pi_ppscw_msg_font_color','#000000');
         $msg_method_text_color = get_option('pi_ppscw_msg_font_color_shipping_method','#000000');
         $msg_method_cost_text_color = get_option('pi_ppscw_msg_font_color_shipping_cost','#000000');
-        $button_bg_color = empty(get_option('pi_ppscw_calculate_shipping_bg_color',''))? '' : get_option('pi_ppscw_calculate_shipping_bg_color','');
-        $button_text_color = empty(get_option('pi_ppscw_calculate_shipping_text_color','')) ? '' : get_option('pi_ppscw_calculate_shipping_text_color','');
+        $button_bg_color = empty(get_option('pi_ppscw_calculate_shipping_bg_color',''))? '#ee6443' : get_option('pi_ppscw_calculate_shipping_bg_color','');
+        $button_text_color = empty(get_option('pi_ppscw_calculate_shipping_text_color','')) ? '#ffffff' : get_option('pi_ppscw_calculate_shipping_text_color','');
 
-        $update_add_button_bg_color = empty(get_option('pi_ppscw_update_address_bg_color',''))? '' : get_option('pi_ppscw_update_address_bg_color','');
-        $update_add_button_text_color = empty(get_option('pi_ppscw_update_address_text_color','')) ? '' : get_option('pi_ppscw_update_address_text_color','');
+        $update_add_button_bg_color = empty(get_option('pi_ppscw_update_address_bg_color',''))? '#ee6443' : get_option('pi_ppscw_update_address_bg_color','');
+        $update_add_button_text_color = empty(get_option('pi_ppscw_update_address_text_color','')) ? '#ffffff' : get_option('pi_ppscw_update_address_text_color','');
 
         $css = "
-            .pisol-ppscw-alert{
-                background-color:{$msg_bg_color};
-                color:{$msg_general_text_color};
-            }
-
-            .pisol-ppscw-methods li{
-                color:{$msg_method_text_color};
-            }
-
-            .pisol-ppscw-methods li .woocommerce-Price-amount{
-                color:{$msg_method_cost_text_color};
-            }
-
-            .button.pisol-shipping-calculator-button{
-                background-color:{$button_bg_color};
-                color:{$button_text_color};
-            }
-
-            .button.pisol-update-address-button{
-                background-color:{$update_add_button_bg_color};
-                color:{$update_add_button_text_color};
+            /* CSS Custom Properties for Design Customization */
+            .pisol-ppscw-container {
+                --pisol-msg-bg-color: {$msg_bg_color};
+                --pisol-msg-text-color: {$msg_general_text_color};
+                --pisol-method-text-color: {$msg_method_text_color};
+                --pisol-method-cost-color: {$msg_method_cost_text_color};
+                --pisol-btn-calc-bg: {$button_bg_color};
+                --pisol-btn-calc-color: {$button_text_color};
+                --pisol-btn-update-bg: {$update_add_button_bg_color};
+                --pisol-btn-update-color: {$update_add_button_text_color};
             }
         ";
         wp_add_inline_style($this->plugin_name, $css);

@@ -74,7 +74,7 @@ class pisol_ppscw_product_page_calculator{
 		if(is_object($product)){
 			$product_id = $product->get_id();
 		}else{
-			$product = "";
+			return;
 		}
 
 		$disable_product = get_post_meta($product_id, 'pisol_disable_shipping_calculator', true);
@@ -342,7 +342,7 @@ class pisol_ppscw_product_page_calculator{
 		$product_id = filter_input(INPUT_POST, 'product_id');
 		$variation_id = filter_input(INPUT_POST, 'variation_id');
 		foreach($packages as $package){
-			if(empty($package['rates']) || !is_array($package['rates'])) break;
+			if(empty($package['rates']) || !is_array($package['rates'])) continue;
 
 			foreach($package['rates'] as $id => $rate){
 				$title = wc_cart_totals_shipping_method_label($rate);
@@ -370,9 +370,11 @@ class pisol_ppscw_product_page_calculator{
 		return true;
 	}
 
+	/**
+	 * @param array $shipping_methods
+	 * @return string
+	 */
 	static function messageTemplate($shipping_methods){
-
-		
 
 		$message_above = get_option('pi_ppscw_above_shipping_methods', 'Shipping methods available for your location:');
 
@@ -399,6 +401,10 @@ class pisol_ppscw_product_page_calculator{
 		return sprintf('<div class="pisol-ppscw-alert">%s</div>', $msg);
 	}
 
+	/**
+	 * @param string $message
+	 * @return string
+	 */
 	static function shortCode($message){
 		
 		$country = __('Country','pisol-product-page-shipping-calculator-woocommerce');
@@ -419,6 +425,10 @@ class pisol_ppscw_product_page_calculator{
 		return $message;
 	}
 
+	/**
+	 * @param mixed $val
+	 * @return mixed
+	 */
 	function enableShippingCalculationWithoutAddress( $val ){
 		if((isset($_POST['action']) && $_POST['action'] === 'pisol_cal_shipping') || (isset($_POST['action']) && $_POST['action'] === 'pisol_save_address_form')){
 			return null;

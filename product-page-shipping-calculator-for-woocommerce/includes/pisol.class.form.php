@@ -419,7 +419,7 @@ class pisol_class_form_ppscw{
         $field = '
         <div class="row align-items-center">
         <div class="col-6">
-        <input id="'.esc_attr($this->setting['field']).'_button" type="button" class="button" value="'.esc_attr(__('Upload image','add-coupon-by-link-woocommerce')).'" />
+        <input id="'.esc_attr($this->setting['field']).'_button" type="button" class="button" value="'.esc_attr(__('Upload image','pisol-product-page-shipping-calculator-woocommerce')).'" />
         <input type="hidden" name="'.esc_attr($this->setting['field']).'" id="'.esc_attr($this->setting['field']).'" value="'.esc_attr($this->saved_value).'">
         </div>
         <div class="col-6">

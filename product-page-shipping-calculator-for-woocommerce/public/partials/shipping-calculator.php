@@ -13,6 +13,10 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
  * @version 4.0.0
+ * @var string $button_text
+ * @var string $update_address_btn_text
+ * @var int $product_id
+ * @var WC_Product $product
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -22,9 +26,10 @@ if($closed == 'open'){
 }else{
 	$style = ' display:none; ';
 }
+$design_template = get_option('pi_ppscw_design_template','pi-template-1');
 ?>
-<div class="pisol-ppscw-alert" id="pisol-ppscw-other-messages"></div>
-<div class="pisol-ppscw-container">
+<div class="pisol-ppscw-alert <?php echo esc_attr($design_template); ?>" id="pisol-ppscw-other-messages"></div>
+<div class="pisol-ppscw-container <?php echo esc_attr($design_template); ?>">
 <?php do_action('pi_ppscw_before_calculate_button'); ?>
 <form class="pisol-woocommerce-shipping-calculator" action="<?php echo esc_url(admin_url('admin-ajax.php')); ?>" method="post" onsubmit="return false;">
 

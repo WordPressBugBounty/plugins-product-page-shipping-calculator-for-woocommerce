@@ -64,6 +64,7 @@
         this.open = function () {
             var parent = this;
             var action = 'pisol_ppscw_popup';
+            this.loadCss();
             $.magnificPopup.open({
                 tLoading: pi_ppscw_setting.loading,
                 items: {
@@ -83,6 +84,14 @@
                     }
                 }
             });
+        }
+
+        this.loadCss = function () {
+            // Check if CSS is already loaded to avoid duplicate loads
+            if (!jQuery('#pisol-address-form-css').length) {
+                var cssUrl = pi_ppscw_setting.address_form_css_url; // You'll add this via wp_localize_script
+                jQuery('head').append('<link id="pisol-address-form-css" rel="stylesheet" href="' + cssUrl + '" />');
+            }
         }
 
         this.autoSelectCountry = function () {
@@ -105,18 +114,5 @@
 
 
     });
-
-    /** this is moved out from ready state as jquery 3.5 does not fire window load event inside document ready event */
-    function badgeAdjust() {
-        jQuery(window).on('load', function () {
-            var width = jQuery("#pisol-ppscw-badge").outerWidth();
-            var height = jQuery("#pisol-ppscw-badge").outerHeight();
-            var margin = parseInt(width) / 2 - (height / 2)
-            jQuery(".pisol-badge-right-center").css("margin-right", "-" + margin + "px");
-            jQuery(".pisol-badge-left-center").css("margin-left", "-" + margin + "px");
-        });
-    }
-
-    badgeAdjust();
 
 })(jQuery);
