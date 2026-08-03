@@ -30,12 +30,11 @@ class pisol_ppscw_estimate_setting{
         $this->active_tab = $this->tab != "" ? $this->tab : 'default';
 
         $this->settings = array(
-
             array('field'=>'pi_ppscw_show_estimate_date', 'label'=>__('Show estimate date for each shipping method on product page','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'switch', 'default'=> 1, 'desc'=>__('This will show the estimate date below each of the shipping method','pisol-product-page-shipping-calculator-woocommerce')),
 
             array('field'=>'pi_ppscw_disable_view_shipping_method', 'label'=>__('Don\'t show shipping method','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'switch', 'default'=> 0, 'desc'=>__('It will only update  the location selected and will not show the shipping method for the selected location (If you are using our estimate plugin then it will update the estimate date as well)','pisol-product-page-shipping-calculator-woocommerce')),
             
-            array('field'=>'pi_ppscw_show_estimate_as_per', 'label'=>__('Shipping method estimate as per','pisol-product-page-shipping-calculator-woocommerce'), 'type'=>'select', 'default'=> 'cart', 'value'=>array('product'=>__('Product estimate','pisol-product-page-shipping-calculator-woocommerce'), 'cart'=>__('Cart estimate','pisol-product-page-shipping-calculator-woocommerce')), 'desc'=>__('It will show the estimate date for each of the shipping method:<br> Product estimate=> estimate will be based on this particular product (useful when you ship item separately)<br>Cart estimate => estimate will be based on all the product in cart (useful when you ship item in order together)','pisol-product-page-shipping-calculator-woocommerce')),
+            array('field'=>'pi_ppscw_show_estimate_as_per', 'label'=>__('Shipping method estimate as per','pisol-product-page-shipping-calculator-woocommerce'), 'type'=>'select', 'default'=> 'product', 'value'=>array('product'=>__('Product estimate','pisol-product-page-shipping-calculator-woocommerce'), 'cart'=>__('Cart estimate','pisol-product-page-shipping-calculator-woocommerce')), 'desc'=>__('It will show the estimate date for each of the shipping method:<br> Product estimate=> estimate will be based on this particular product (useful when you ship item separately)<br>Cart estimate => estimate will be based on all the product in cart (useful when you ship item in order together)','pisol-product-page-shipping-calculator-woocommerce')),
 
         );
 
@@ -68,10 +67,25 @@ class pisol_ppscw_estimate_setting{
 
     function tab_content(){
        ?>
+       <div id="row_title" class="pisol-form-element-row row py-4 border-bottom align-items-center bg-dark opacity-75 text-light">
+            <div class="col-6">
+                <h2 class="mt-0 mb-0 text-light font-weight-light h4">
+                    Estimate delivery date
+                </h2>
+            </div>
+            <div class="col-6">
+                <a href="<?php echo esc_url(admin_url('admin.php?page=pi-edd')); ?>" class="btn btn-primary float-right" target="_blank">
+                    <?php esc_html_e('Configure estimate dates','pisol-product-page-shipping-calculator-woocommerce'); ?>
+                </a>
+            </div>
+        </div>
         <form method="post" action="options.php"  class="pisol-setting-form">
         <?php settings_fields( $this->setting_key ); ?>
         <?php
             foreach($this->settings as $setting){
+                if(pisol_ppscw_estimate_free_present()){
+                    if($setting['field'] == 'pi_ppscw_disable_view_shipping_method') continue;
+                }
                 new pisol_class_form_ppscw($setting, $this->setting_key);
             }
         ?>

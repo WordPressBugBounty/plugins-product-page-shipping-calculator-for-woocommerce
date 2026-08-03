@@ -37,7 +37,7 @@ class pisol_ppscw_shipping_methods_estimate_new{
     }
 
     function get_estimate($product_id, $shipping){
-        $estimate_based_on = get_option('pi_ppscw_show_estimate_as_per','cart'); // product or cart
+        $estimate_based_on = get_option('pi_ppscw_show_estimate_as_per','product'); // product or cart
 
         if($estimate_based_on == 'cart'){
             $estimate = OrderEstimateCalculator::get_order_estimate($shipping);

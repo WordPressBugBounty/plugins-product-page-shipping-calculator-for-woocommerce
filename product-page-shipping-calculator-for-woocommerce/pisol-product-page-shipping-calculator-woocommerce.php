@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://piwebsolution.com
- * @since             1.3.49.90
+ * @since             1.3.49.91
  * @package           Pisol_Product_Page_Shipping_Calculator_Woocommerce
  *
  * @wordpress-plugin
  * Plugin Name:       Product page shipping calculator for WooCommerce
  * Plugin URI:        https://piwebsolution.com/woocommerce-shipping-calculator
  * Description:       Product page shipping calculator for WooCommerce
- * Version:           1.3.49.90
+ * Version:           1.3.49.91
  * Author:            PI Websolution
  * Author URI:        https://piwebsolution.com
  * License:           GPL-2.0+
@@ -52,6 +52,14 @@ function pisol_ppscw_estimate_pro_present(){
     return false;
 }
 
+function pisol_ppscw_estimate_free_present(){
+    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+    if(is_plugin_active( 'estimate-delivery-date-for-woocommerce/pi-edd.php') && defined('PI_EDD_VERSION') && version_compare(PI_EDD_VERSION, '4.11.44','>=')){
+        return true;
+    }
+    return false;
+}
+
 /**
  * Declare compatible with HPOS new order table 
  */
@@ -63,10 +71,10 @@ add_action( 'before_woocommerce_init', function() {
 
 /**
  * Currently plugin version.
- * Start at version 1.3.49.90 and use SemVer - https://semver.org
+ * Start at version 1.3.49.91 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'PISOL_PRODUCT_PAGE_SHIPPING_CALCULATOR_WOOCOMMERCE_VERSION', '1.3.49.90' );
+define( 'PISOL_PRODUCT_PAGE_SHIPPING_CALCULATOR_WOOCOMMERCE_VERSION', '1.3.49.91' );
 
 /**
  * The code that runs during plugin activation.
@@ -112,7 +120,7 @@ add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ),  function ( $l
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    1.3.49.90
+ * @since    1.3.49.91
  */
 function run_pisol_product_page_shipping_calculator_woocommerce() {
 

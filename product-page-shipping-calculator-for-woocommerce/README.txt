@@ -3,7 +3,7 @@ Contributors: rajeshsingh520
 Tags: shipping calculator, shipping estimate, shipping cost, check WooCommerce pincode, check WooCommerce shipping
 Requires at least: 4.7
 Tested up to: 7.0
-Stable tag: 1.3.49.90
+Stable tag: 1.3.49.91
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -147,9 +147,11 @@ Yes, it is HPOS compatible
 
 == Changelog ==
 
+= 1.3.49.91 =
+* now support free version of estimate delivery date plugin as well.
+
 = 1.3.49.90 =
 * new desing implemented, you can fall back to old desing from Desing > Template > Old Classic desing
-
 
 = 1.3.49.79 =
 * Tested for WC 10.9.0

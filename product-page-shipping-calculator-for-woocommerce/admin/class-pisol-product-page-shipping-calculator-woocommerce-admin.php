@@ -28,7 +28,7 @@ class Pisol_Product_Page_Shipping_Calculator_Woocommerce_Admin {
 			new pisol_ppscw_remove_fields($this->plugin_name);
 			new pisol_ppscw_design_setting($this->plugin_name);
 			new pisol_ppscw_badge_option($this->plugin_name);
-			if(pisol_ppscw_estimate_pro_present()){
+			if(pisol_ppscw_estimate_pro_present() || pisol_ppscw_estimate_free_present()){
 				new pisol_ppscw_estimate_setting($this->plugin_name);
 			}else{
 				new pisol_ppscw_free_estimate_setting($this->plugin_name);

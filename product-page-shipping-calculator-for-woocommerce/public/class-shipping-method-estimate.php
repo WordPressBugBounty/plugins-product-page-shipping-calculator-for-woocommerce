@@ -30,7 +30,7 @@ class pisol_ppscw_shipping_methods_estimate{
     }
 
     function methodEstimate($method, $product_id, $variation_id){
-        $estimate_based_on = get_option('pi_ppscw_show_estimate_as_per','cart'); // product or cart
+        $estimate_based_on = get_option('pi_ppscw_show_estimate_as_per','product'); // product or cart
         $shipping_method_settings = $this->getShippingSetting($method);
         if($estimate_based_on == 'product'){
             return $this->productMethodEstimate($shipping_method_settings, $product_id, $variation_id);

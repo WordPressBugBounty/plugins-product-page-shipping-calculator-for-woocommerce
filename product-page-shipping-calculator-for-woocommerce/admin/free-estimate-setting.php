@@ -13,7 +13,7 @@ class pisol_ppscw_free_estimate_setting{
 
     private $this_tab = 'estiamte-setting';
 
-    private $tab_name = "Estimate date";
+    private $tab_name = "Show estimate delivery date";
 
     private $setting_key = 'pisol_ppscw_free_estimate_setting';
 
@@ -35,7 +35,7 @@ class pisol_ppscw_free_estimate_setting{
             
             array('field'=>'pi_ppscw_disable_view_shipping_method1', 'label'=>__('Don\'t show shipping methods','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'switch', 'default'=> 0, 'desc'=>__('It will only update  the location selected and will not show the shipping method for the selected location (If you are using our estimate plugin then it will update the estimate date as well)','pisol-product-page-shipping-calculator-woocommerce'),'pro'=>true),
 
-            array('field'=>'pi_ppscw_show_estimate_as_per1', 'label'=>__('Shipping method estimate as per','pisol-product-page-shipping-calculator-woocommerce'), 'type'=>'select', 'default'=> 'cart', 'value'=>array('product'=>__('Product estimate','pisol-product-page-shipping-calculator-woocommerce'), 'cart'=>__('Cart estimate','pisol-product-page-shipping-calculator-woocommerce')), 'desc'=>__('It will show the estimate date for each of the shipping method:<br> Product estimate date=> estimate will be based on this particular product (useful when you ship item separately)<br>Cart estimate date => estimate will be based on all the product in cart (useful when you ship item in order together)','pisol-product-page-shipping-calculator-woocommerce'),'pro'=>true),
+            array('field'=>'pi_ppscw_show_estimate_as_per1', 'label'=>__('Shipping method estimate as per','pisol-product-page-shipping-calculator-woocommerce'), 'type'=>'select', 'default'=> 'product', 'value'=>array('product'=>__('Product estimate','pisol-product-page-shipping-calculator-woocommerce'), 'cart'=>__('Cart estimate','pisol-product-page-shipping-calculator-woocommerce')), 'desc'=>__('It will show the estimate date for each of the shipping method:<br> Product estimate date=> estimate will be based on this particular product (useful when you ship item separately)<br>Cart estimate date => estimate will be based on all the product in cart (useful when you ship item in order together)','pisol-product-page-shipping-calculator-woocommerce'),'pro'=>true),
 
         );
 
@@ -58,7 +58,7 @@ class pisol_ppscw_free_estimate_setting{
     }
 
     function tab(){
-        $this->tab_name = __("Estimate date",'pisol-product-page-shipping-calculator-woocommerce');
+        $this->tab_name = __("Show estimate delivery date",'pisol-product-page-shipping-calculator-woocommerce');
         ?>
         <a class=" pi-side-menu  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo esc_url(admin_url( 'admin.php?page='.sanitize_text_field($_GET['page']).'&tab='.$this->this_tab )); ?>">
         <span class="dashicons dashicons-calendar-alt"></span> <?php echo esc_html($this->tab_name); ?> 
@@ -67,28 +67,23 @@ class pisol_ppscw_free_estimate_setting{
     }
 
     function tab_content(){
+        
        ?>
-        <div class="alert alert-info alert-dismissible fade show border-0 shadow-sm mt-3" role="alert" style="border-left: 4px solid #0c5460;">
-            <div class="d-flex align-items-center mb-3">
-                <span class="dashicons dashicons-info" style="font-size: 28px; margin-right: 12px; color: #0c5460;"></span>
-                <h4 class="mb-0" style="color: #0c5460; font-weight: 600;">Pro Features Require Extension</h4>
+       <div id="row_title" class="pisol-form-element-row row py-4 border-bottom align-items-center bg-dark opacity-75 text-light">
+            <div class="col-6">
+                <h2 class="mt-0 mb-0 text-light font-weight-light h4">
+                    Estimate delivery date
+                </h2>
             </div>
-            <p class="mb-3" style="font-size: 15px; line-height: 1.6; color: #333;">
-                Below settings only work when you have the <a target="_blank" href="https://www.piwebsolution.com/product/pro-estimate-delivery-date-for-woocommerce/?utm_source=product-page-shipping-calculator-free-plugin&utm_medium=display&utm_campaign=product-page-shipping-calculator" style="color: #0c5460; font-weight: 500; text-decoration: underline;">PRO Estimate delivery date plugin</a> installed. It adds the estimate delivery date for each shipping method.
-            </p>
-            <a href="https://www.piwebsolution.com/product/pro-estimate-delivery-date-for-woocommerce/?utm_source=product-page-shipping-calculator-free-plugin&utm_medium=display&utm_campaign=product-page-shipping-calculator" target="_blank" class="btn btn-primary btn-sm" style="border-radius: 4px; font-weight: 600; padding: 8px 20px;">
-                <span class="dashicons dashicons-arrow-right" style="font-size: 14px; margin-right: 6px; vertical-align: middle;"></span>Check out Pro Estimate Delivery Date Plugin
-            </a>
         </div>
-        <img class="img-fluid" src="<?php echo esc_url(plugin_dir_url( __FILE__ )); ?>img/product.png">
-        <form method="post" action="options.php"  class="pisol-setting-form exclude-quick-save">
-        <?php settings_fields( $this->setting_key ); ?>
-        <?php
-            foreach($this->settings as $setting){
-                new pisol_class_form_ppscw($setting, $this->setting_key);
-            }
-        ?>
-        </form>
+       <div class="row">
+            <div class="col-6">
+                <img class="img-fluid my-3" src="<?php echo esc_url(plugin_dir_url( __FILE__ )); ?>img/product.png">
+            </div>
+            <div class="col-6">
+                <?php do_action( 'pisol_ppscw_dependency_install'); ?>
+            </div>
+       </div>
         
        <?php
     }

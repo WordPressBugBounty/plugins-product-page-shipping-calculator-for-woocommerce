@@ -175,7 +175,7 @@ class Pisol_Product_Page_Shipping_Calculator_Woocommerce_Public {
 	}
 
 	static function show_shipping_method(){
-		if(!pisol_ppscw_estimate_pro_present()) return 0;
+		if(!( pisol_ppscw_estimate_pro_present() )) return 0;
 
 		return get_option('pi_ppscw_disable_view_shipping_method','0');
 	}
