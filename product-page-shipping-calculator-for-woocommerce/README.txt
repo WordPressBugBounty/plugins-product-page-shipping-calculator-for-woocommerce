@@ -3,7 +3,7 @@ Contributors: rajeshsingh520
 Tags: shipping calculator, shipping estimate, shipping cost, check WooCommerce pincode, check WooCommerce shipping
 Requires at least: 4.7
 Tested up to: 7.0
-Stable tag: 1.3.49.91
+Stable tag: 1.3.49.92
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -146,6 +146,9 @@ Enable the option of "Load user location data by AJAX to avoid page caching"; th
 Yes, it is HPOS compatible
 
 == Changelog ==
+
+= 1.3.49.92 =
+* small code improvement 
 
 = 1.3.49.91 =
 * now support free version of estimate delivery date plugin as well.

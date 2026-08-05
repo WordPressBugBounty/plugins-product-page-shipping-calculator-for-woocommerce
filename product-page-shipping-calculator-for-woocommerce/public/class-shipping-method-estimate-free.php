@@ -22,7 +22,8 @@ class pisol_ppscw_shipping_methods_estimate_free{
 
         $estimate = $this->methodEstimate($method, $product_id, $variation_id);
         $msg = Pi_Edd_Shipping_Estimate_Calculator::get_message($estimate);
-        if(empty($msg)) return $title;
+
+        if(empty($msg)) return self::remove_trailing_parentheses($title);
 
         return self::remove_trailing_parentheses($title).' <div class="pi-edd-method-estimate">'.$msg.'</div>';
     }
@@ -30,11 +31,16 @@ class pisol_ppscw_shipping_methods_estimate_free{
     /**
      * Removes a trailing "(...)" segment from a title string.
      * e.g. "Express shipping (Delivery by Aug 16, 2026)" => "Express shipping"
+     * We only remove bracket when block support is enabled in the estimate plugin settings.
      *
      * @param string $title
      * @return string
      */
     static function remove_trailing_parentheses( $title ) {
+        $useing_block = get_option('pi_edd_estimate_block_support', 1);
+
+        if(empty($useing_block)) return $title;
+
         $title = (string) $title;
         // Normalize non-breaking spaces / HTML entities to regular spaces.
         $title = str_replace( '&nbsp;', ' ', $title );
