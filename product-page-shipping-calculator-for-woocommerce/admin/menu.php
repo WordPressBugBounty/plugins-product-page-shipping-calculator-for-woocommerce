@@ -31,11 +31,11 @@ class pisol_ppscw_menu{
     }
 
     public function bootstrap_style() {
-        wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/pisol-product-page-shipping-calculator-woocommerce-admin.css', array(), $this->version, 'all' );
+        //wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/pisol-product-page-shipping-calculator-woocommerce-admin.css', array(), $this->version, 'all' );
 
         wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/pisol-product-page-shipping-calculator-woocommerce-admin.js', array('jquery'), $this->version, 'all' );
 
-		wp_enqueue_style( $this->plugin_name."_bootstrap", plugin_dir_url( __FILE__ ) . 'css/bootstrap.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name."_admin", plugin_dir_url( __FILE__ ) . 'css/admin.css', array(), $this->version, 'all' );
 
         wp_enqueue_script( $this->plugin_name."_quick_save", plugin_dir_url( __FILE__ ) . 'js/pisol-quick-save.js', array('jquery'), $this->version, 'all' );
 
@@ -56,39 +56,23 @@ class pisol_ppscw_menu{
             settings_errors();
         }
         ?>
-        <div class="bootstrap-wrapper clear">
-        <div class="container mt-2">
-            <div class="row">
-                    <div class="col-12">
-                        <div class='bg-dark'>
-                        <div class="row">
-                            <div class="col-12 col-sm-2 py-2">
-                                    <a href="https://www.piwebsolution.com/" target="_blank"><img class="img-fluid ml-2" src="<?php echo esc_url( plugin_dir_url( __FILE__ ) ); ?>img/pi-web-solution.svg"></a>
-                            </div>
-                            <div class="col-12 col-sm-10 d-flex text-center small pisol-top-menu">
-                                
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                <div class="bg-light border pl-3 pr-3 pt-0">
-                    <div class="row">
-                        <div class="col-12 col-md-3 border-right">
-                            <div id="pisol-side-menu" class="mb-4 rounded pi-sticky">
-                                <?php do_action($this->plugin_name.'_tab'); ?>
-                            </div>
-                        </div>
-                        <div class="col">
-                        <?php do_action($this->plugin_name.'_tab_content'); ?>
-                        </div>
-                    </div>
-                </div>
+        <div class="pisol-container">
+            <div class="pisol-header">
+                <div id="pisol-header-bar">
+                    <a href="https://www.piwebsolution.com/" target="_blank"><img id="pi-logo" class="pisol-img-fluid" src="<?php echo esc_url( plugin_dir_url( __FILE__ ) ); ?>img/pi-web-solution.svg"></a>
                 </div>
             </div>
-        </div>
+
+            <div class="pisol-left-sidebar">
+                <div id="pisol-side-menu" class="mb-4 rounded py-3 ">
+                    <?php do_action($this->plugin_name.'_tab'); ?>
+                </div>
+                <?php do_action($this->plugin_name.'_promotion'); ?>
+            </div>
+
+            <div class="pisol-content">
+                <?php do_action($this->plugin_name.'_tab_content'); ?>
+            </div>
         </div>
         <?php
     }

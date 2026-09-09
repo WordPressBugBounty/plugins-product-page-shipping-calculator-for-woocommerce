@@ -67,18 +67,17 @@ class pisol_ppscw_estimate_setting{
 
     function tab_content(){
        ?>
-       <div id="row_title" class="pisol-form-element-row row py-4 border-bottom align-items-center bg-dark opacity-75 text-light">
-            <div class="col-6">
-                <h2 class="mt-0 mb-0 text-light font-weight-light h4">
-                    Estimate delivery date
-                </h2>
-            </div>
-            <div class="col-6">
-                <a href="<?php echo esc_url(admin_url('admin.php?page=pi-edd')); ?>" class="btn btn-primary float-right" target="_blank">
+        <div id="row_title" class="row pisol-form-element-row field-type-setting_category">
+            <div class="pisol-form-label-col" style="align-items: center;">
+            <h2 class="pisol-field-title">Estimate delivery date</h2>
+            <div class="pisol-info-links">
+                <a href="<?php echo esc_url(admin_url('admin.php?page=pi-edd')); ?>" class="pisol-info-links" target="_blank">
                     <?php esc_html_e('Configure estimate dates','pisol-product-page-shipping-calculator-woocommerce'); ?>
                 </a>
             </div>
+            </div>
         </div>
+
         <form method="post" action="options.php"  class="pisol-setting-form">
         <?php settings_fields( $this->setting_key ); ?>
         <?php

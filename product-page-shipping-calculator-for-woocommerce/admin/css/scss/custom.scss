@@ -1,0 +1,16 @@
+.tab-icon{
+    width:18px;
+}
+
+.custom-control.custom-switch:has(#hidden-msg){
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+#hidden-msg{
+    padding:10px;
+    background:#eef2ff;
+    border-radius:7px;
+    box-shadow: inset 3px 0 0 var(--pisol-dtt-item-active-accent, #ee6443);
+}

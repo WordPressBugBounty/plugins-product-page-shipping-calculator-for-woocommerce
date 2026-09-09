@@ -1,0 +1,92 @@
+kbd.pi-selectable {
+    padding: .2rem .4rem;
+    font-size: 87.5%;
+    color: #fff;
+    background-color: var(--pisol-black-color) !important;
+    border-radius: 0.2rem;
+    margin-top:5px !important;
+    display: inline-block;
+    -webkit-touch-callout: all;
+    -webkit-user-select: all;
+    -khtml-user-select: all;
+    -moz-user-select: all;
+    -ms-user-select: all;
+    user-select: all;
+}
+
+.pisol-custom-grid {
+    &.row {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: 16px;
+        align-items: center;
+        label{
+            display: block;
+        }
+    }
+
+    [class*="col-"] {
+        min-width: 0;
+    }
+
+    .col-1  { grid-column: span 1; }
+    .col-2  { grid-column: span 2; }
+    .col-3  { grid-column: span 3; }
+    .col-4  { grid-column: span 4; }
+    .col-5  { grid-column: span 5; }
+    .col-6  { grid-column: span 6; }
+    .col-7  { grid-column: span 7; }
+    .col-8  { grid-column: span 8; }
+    .col-9  { grid-column: span 9; }
+    .col-10 { grid-column: span 10; }
+    .col-11 { grid-column: span 11; }
+    .col-12 { grid-column: span 12; }
+}
+
+#pi-selected-holidays, #pi-selected-shop-holidays{
+    span {
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        min-height: 48px;
+
+        margin: 0 8px 8px 0;
+
+        padding: 0 18px;
+
+        border: 2px solid transparent;
+        border-radius: 9px;
+
+        background: #f7f7f7;
+
+        cursor: pointer;
+
+        transition: all .18s ease;
+
+        color: var(--pisol-black-color) !important;
+
+        font-size: 14px;
+        font-weight: 600;
+
+        text-decoration: none;
+
+        &.btn-primary{
+            background: rgba(0, 0, 0, .025);
+            box-shadow: inset 4px 0 0 var(--pisol-primary-color);
+            color:var(--pisol-primary-color) !important;
+        }
+
+
+        &:hover {
+            transform: translateX(5px);
+            box-shadow: inset 3px 0 0 var(--pisol-primary-color);
+            cursor:inherit;
+        }
+}
+}
+
+#pi_edd_translation_container{
+    padding:20px;
+}

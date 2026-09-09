@@ -69,21 +69,21 @@ class pisol_ppscw_free_estimate_setting{
     function tab_content(){
         
        ?>
-       <div id="row_title" class="pisol-form-element-row row py-4 border-bottom align-items-center bg-dark opacity-75 text-light">
-            <div class="col-12">
-                <h2 class="mt-0 mb-0 text-light font-weight-light h4">
-                    Estimate delivery date
-                </h2>
+        <div id="row_title" class="pisol-form-element-row row py-4 border-bottom align-items-center  bg-dark2 text-light field-type-setting_category">
+            <div class="pisol-form-label-col col-md-12">
+                <h2 class="pisol-field-title mt-0 mb-0 text-light font-weight-light h4">Estimate delivery date</h2>
             </div>
         </div>
-       <div class="row">
-            <div class="col-12 col-md-6">
-                <?php do_action( 'pisol_ppscw_dependency_install'); ?>
-            </div>
-            <div class="col-12 col-md-6">
-                <img class="img-fluid my-3" src="<?php echo esc_url(plugin_dir_url( __FILE__ )); ?>img/product.png">
-            </div>
-       </div>
+        <div style="padding:20px;">
+        <div class="row">
+                <div class="col-12 col-md-6">
+                    <?php do_action( 'pisol_ppscw_dependency_install'); ?>
+                </div>
+                <div class="col-12 col-md-6">
+                    <img class="pisol-img-fluid my-3" src="<?php echo esc_url(plugin_dir_url( __FILE__ )); ?>img/product.png">
+                </div>
+        </div>
+        </div>
         
        <?php
     }

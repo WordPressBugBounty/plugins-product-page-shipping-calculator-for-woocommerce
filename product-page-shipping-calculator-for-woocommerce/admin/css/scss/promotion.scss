@@ -1,0 +1,322 @@
+/*
+  PIWebSolution :: Estimated Delivery Date — Pro upgrade banner
+  Enqueue this file ONLY on the plugin's own admin screen
+  (wp_enqueue_style with a page-slug check), so it never loads
+  site-wide. Everything is scoped under .pisol-edd-pro-banner and
+  reinforced with !important because wp-admin's core stylesheet
+  (and other plugins' admin CSS) can otherwise leak into ul/li/a/h*.
+*/
+
+/* ---------- tokens ---------- */
+.pisol-edd-pro-banner {
+  --pisol-ink: #16233d;
+  --pisol-ink-deep: #101a2f;
+  --pisol-paper: #edeff3;
+  --pisol-paper-dim: rgba(237, 239, 243, 0.68);
+  --pisol-paper-faint: rgba(237, 239, 243, 0.16);
+  --pisol-amber: #e4a63c;
+  --pisol-amber-dim: rgba(228, 166, 60, 0.35);
+  --pisol-teal: #4fa490;
+  --pisol-red: #c1432e;
+  --pisol-red-deep: #a2331f;
+  --pisol-font-display: 'Archivo', 'Arial Narrow', Arial, sans-serif;
+  --pisol-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --pisol-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+/* ---------- reset (guard against wp-admin / other plugin CSS) ---------- */
+.pisol-edd-pro-banner,
+.pisol-edd-pro-banner *,
+.pisol-edd-pro-banner *::before,
+.pisol-edd-pro-banner *::after {
+  box-sizing: border-box !important;
+}
+.pisol-edd-pro-banner ul,
+.pisol-edd-pro-banner li {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  border: 0 !important;
+  background: none !important;
+}
+.pisol-edd-pro-banner h1,
+.pisol-edd-pro-banner h2,
+.pisol-edd-pro-banner h3,
+.pisol-edd-pro-banner p {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-weight: inherit;
+}
+.pisol-edd-pro-banner a {
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+.pisol-edd-pro-banner svg {
+  display: block !important;
+}
+
+/* ---------- card ---------- */
+.pisol-edd-pro-banner {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 340px !important;
+  padding: 32px 24px 26px !important;
+  background-color: var(--pisol-ink) !important;
+  background-image: radial-gradient(rgba(237, 239, 243, 0.05) 1px, transparent 1px) !important;
+  background-size: 14px 14px !important;
+  border-radius: 14px !important;
+  box-shadow: 0 18px 40px rgba(6, 10, 20, 0.35) !important;
+  font-family: var(--pisol-font-body) !important;
+  -webkit-font-smoothing: antialiased !important;
+  overflow: visible !important;
+  margin:30px auto !important;
+}
+
+/* ---------- stamp (signature element) ---------- */
+.pisol-edd-stamp {
+  position: absolute !important;
+  top: -16px !important;
+  right: 16px !important;
+  width: 66px !important;
+  height: 66px !important;
+  transform: rotate(-9deg) !important;
+  z-index: 2 !important;
+}
+.pisol-edd-stamp-ring {
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: 50% !important;
+  border: 2px dashed var(--pisol-amber) !important;
+  background: var(--pisol-ink-deep) !important;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35), inset 0 0 0 5px var(--pisol-ink) !important;
+}
+.pisol-edd-stamp-text {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-family: var(--pisol-font-display) !important;
+  font-weight: 800 !important;
+  font-size: 14px !important;
+  letter-spacing: 1px !important;
+  color: var(--pisol-amber) !important;
+}
+
+/* ---------- hero / rating ---------- */
+.pisol-edd-hero {
+  text-align: center !important;
+  margin: 4px 0 26px !important;
+}
+.pisol-edd-stars {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 3px !important;
+  margin-bottom: 12px !important;
+}
+.pisol-edd-star {
+  width: 16px !important;
+  height: 16px !important;
+}
+.pisol-edd-star path {
+  fill: var(--pisol-amber) !important;
+}
+.pisol-edd-trust,
+.pisol-edd-rating {
+  font-family: var(--pisol-font-body) !important;
+  font-size: 13.5px !important;
+  line-height: 1.5 !important;
+  color: var(--pisol-paper-dim) !important;
+}
+.pisol-edd-trust strong,
+.pisol-edd-rating strong {
+  color: var(--pisol-paper) !important;
+  font-weight: 700 !important;
+}
+
+/* ---------- section headings ---------- */
+.pisol-edd-section {
+  margin: 0 !important;
+}
+.pisol-edd-pro-banner .pisol-edd-heading {
+  display: flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+  margin: 0 0 14px !important;
+  font-family: var(--pisol-font-display) !important;
+  font-weight: 800 !important;
+  font-size: 14px !important;
+  letter-spacing: 0.3px !important;
+  text-transform: uppercase !important;
+  color: var(--pisol-paper) !important;
+}
+.pisol-edd-heading-icon {
+  flex: none !important;
+  width: 18px !important;
+  height: 18px !important;
+  fill: none !important;
+  stroke: var(--pisol-amber) !important;
+  stroke-width: 1.6 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+/* ---------- feature list ---------- */
+.pisol-edd-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+.pisol-edd-list li {
+  position: relative !important;
+  padding-left: 16px !important;
+  font-family: var(--pisol-font-body) !important;
+  font-size: 13.5px !important;
+  line-height: 1.5 !important;
+  color: var(--pisol-paper-dim) !important;
+}
+.pisol-edd-list li::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 7px !important;
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background: var(--pisol-teal) !important;
+}
+.pisol-edd-list code {
+  font-family: var(--pisol-font-mono) !important;
+  background: rgba(237, 239, 243, 0.1) !important;
+  padding: 1px 5px !important;
+  border-radius: 4px !important;
+  font-size: 12px !important;
+  color: var(--pisol-amber) !important;
+}
+
+/* ---------- perforated divider ---------- */
+.pisol-edd-divider {
+  position: relative !important;
+  height: 0 !important;
+  margin: 24px 0 !important;
+  border: none !important;
+  border-top: 1.5px dashed var(--pisol-paper-faint) !important;
+}
+.pisol-edd-divider::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  width: 5px !important;
+  height: 5px !important;
+  background: var(--pisol-amber) !important;
+  border-radius: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  box-shadow: -13px 0 0 var(--pisol-amber-dim), 13px 0 0 var(--pisol-amber-dim) !important;
+}
+
+/* ---------- price tag ---------- */
+.pisol-edd-price-wrap {
+  display: flex !important;
+  justify-content: center !important;
+  margin: 30px 0 18px !important;
+}
+.pisol-edd-price-tag {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 12px 24px 12px 30px !important;
+  background: var(--pisol-amber) !important;
+  clip-path: polygon(18px 0, 100% 0, 100% 100%, 18px 100%, 0 50%) !important;
+  transform: rotate(-6deg) !important;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25) !important;
+}
+.pisol-edd-price-eyelet {
+  position: absolute !important;
+  left: 9px !important;
+  top: 50% !important;
+  width: 7px !important;
+  height: 7px !important;
+  background: var(--pisol-ink-deep) !important;
+  border-radius: 50% !important;
+  transform: translateY(-50%) !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35) !important;
+}
+.pisol-edd-price-label {
+  font-family: var(--pisol-font-body) !important;
+  font-size: 10.5px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  font-weight: 700 !important;
+  color: var(--pisol-ink-deep) !important;
+  opacity: 0.75 !important;
+}
+.pisol-edd-price-value {
+  font-family: var(--pisol-font-mono) !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: var(--pisol-ink-deep) !important;
+}
+
+/* ---------- CTA ---------- */
+.pisol-edd-cta {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  width: 100% !important;
+  padding: 15px 18px !important;
+  background: var(--pisol-red) !important;
+  color: var(--pisol-paper) !important;
+  font-family: var(--pisol-font-body) !important;
+  font-weight: 700 !important;
+  font-size: 13.5px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.4px !important;
+  border-radius: 8px !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: background-color 0.18s ease, transform 0.18s ease !important;
+}
+.pisol-edd-cta-lock {
+  width: 14px !important;
+  height: 14px !important;
+  fill: none !important;
+  stroke: var(--pisol-paper) !important;
+  stroke-width: 1.6 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+.pisol-edd-cta:hover {
+  background: var(--pisol-red-deep) !important;
+  transform: translateY(-2px) !important;
+}
+.pisol-edd-cta:focus-visible {
+  outline: 2px solid var(--pisol-amber) !important;
+  outline-offset: 2px !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pisol-edd-cta {
+    transition: none !important;
+  }
+  .pisol-edd-cta:hover {
+    transform: none !important;
+  }
+}
+
+/* ---------- small screens ---------- */
+@media (max-width: 360px) {
+  .pisol-edd-pro-banner {
+    padding: 26px 18px 20px !important;
+  }
+  .pisol-edd-stamp {
+    right: 10px !important;
+  }
+}
+
+@media (max-width:768px){
+  .pisol-edd-section, .pisol-edd-divider{
+    display:none;
+  }
+}

@@ -59,8 +59,9 @@ class Class_Pi_Sales_Adv_Shipping_Promotion{
         }
         $plugin_slug = $this->plugin_slug;
         $plugin_file = $this->plugin_file;
-
+        echo '<div style="padding:20px;">';
         include_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/promotion.php';
+        echo '</div>';
     }
 
     function plugin_status() {
