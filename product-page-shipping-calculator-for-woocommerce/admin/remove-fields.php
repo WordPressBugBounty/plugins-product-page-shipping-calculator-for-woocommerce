@@ -89,7 +89,7 @@ class pisol_ppscw_remove_fields{
                 new pisol_class_form_ppscw($setting, $this->setting_key);
             }
         ?>
-        <input type="submit" class="my-3 btn btn-md btn-primary" value="<?php esc_attr_e('Save Option','pisol-product-page-shipping-calculator-woocommerce'); ?>" />
+        <input type="submit" class="my-3 btn btn-md btn-primary" value="<?php esc_attr_e('Save Changes','pisol-product-page-shipping-calculator-woocommerce'); ?>" />
         </form>
         <div style="display:none;">
         <div id="hidden-msg" class="alert alert-warning">

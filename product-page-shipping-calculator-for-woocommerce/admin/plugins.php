@@ -64,6 +64,9 @@ class pisol_ppscw_other_plugins{
         <a class=" pi-side-menu bg-secondary" target="_blank" href="<?php echo esc_url( 'https://wordpress.org/support/plugin/product-page-shipping-calculator-for-woocommerce/reviews/' ); ?>">
         <span class="dashicons dashicons-editor-help"></span> <?php esc_html_e("GIVE SUGGESTIONS",'pisol-product-page-shipping-calculator-woocommerce'); ?>
         </a>
+        <a class=" pi-side-menu bg-secondary" target="_blank" href="<?php echo esc_url( 'https://www.piwebsolution.com/user-documentation-product-page-shipping-calculator/' ); ?>">
+        <span class="dashicons dashicons-book"></span> <?php esc_html_e("Documentation",'pisol-product-page-shipping-calculator-woocommerce'); ?>
+        </a>
         <?php
     }
 

@@ -64,7 +64,7 @@ class Pisol_Product_Page_Shipping_Calculator_Woocommerce_Public {
 	}
 
 	function addInlineStyle(){
-        $update_add_button_bg_color = get_option('pi_ppscw_popup_header_bg_color', '#e74c3c');
+        $update_add_button_bg_color = pisol_ppscw_design::gradient_helper(get_option('pi_ppscw_popup_header_bg_color', array('color1' => "#EE6A47", 'color2' => "#D9472B", 'direction' => 135)));
         $update_add_button_text_color = get_option('pi_ppscw_popup_header_text_color', '#FFFFFF');
 
         $css = "

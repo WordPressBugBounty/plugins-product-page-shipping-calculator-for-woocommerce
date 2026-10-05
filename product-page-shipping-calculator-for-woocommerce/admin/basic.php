@@ -55,26 +55,13 @@ class pisol_ppscw_basic_option{
 
             array('field'=>'title', 'class'=> 'bg-dark2 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Show Shipping Based on Quantity Field", 'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category"),
 
-            array('field'=>'pi_ppscw_consider_quantity_field', 'label'=>__('Product Quantity Field','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'radio','value'=> array('consider-quantity' => __('Consider product quantity field', 'pisol-product-page-shipping-calculator-woocommerce'), 'dont-consider-quantity-field' => __('Don\'t consider quantity field', 'pisol-product-page-shipping-calculator-woocommerce')), 'default'=>'dont-consider-quantity-field', 'desc'=>__("Consider product quantity field: Quantity selected in the quantity field + quantity of product in the cart will be considered to calculate the shipping method and cost <strong>(We suggest using this option to get more accurate shipping method)</strong> <br>Don't consider quantity: 1 unit of product will be considered to calculate the shipping method till product is not added to the cart, when product is added to the cart the quantity added in the cart will be used to give the shipping method", 'pisol-product-page-shipping-calculator-woocommerce')),
+            array('field'=>'pi_ppscw_consider_quantity_field', 'label'=>__('Product Quantity Field','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'radio','value'=> array('consider-quantity' => __('Calculate for the quantity selected (more accurate)', 'pisol-product-page-shipping-calculator-woocommerce'), 'dont-consider-quantity-field' => __('Calculate for 1 unit until the product is in the cart', 'pisol-product-page-shipping-calculator-woocommerce')), 'default'=>'dont-consider-quantity-field', 'desc'=>__("Choose how many units the calculator should use when estimating shipping. Using the selected quantity gives a more accurate result because shipping rules often depend on quantity, weight, or total cost", 'pisol-product-page-shipping-calculator-woocommerce')),
 
             /** In future default should be  turned on */
             array('field'=>'pi_ppscw_ignore_cart_product', 'label' => __('Show shipping cost of the individual product only','pisol-product-page-shipping-calculator-woocommerce'), 'type' => 'switch', 'default' => 0, 'desc' => __('If enabled, the shipping cost will be shown for the product that user is checking for, ignoring the other product present in customer cart', 'pisol-product-page-shipping-calculator-woocommerce')),
 
 
-            array('field'=>'title', 'class'=> 'bg-dark2 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Text Messages Shown in Plugin", 'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category"),
-
-            array('field'=>'pi_ppscw_no_address_added_yet', 'label'=>__('When user hasn\'t entered an address','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'text', 'default'=>'Insert your location to get the shipping method', 'desc'=>"Insert your location to get the shipping method"),
-            
-            array('field'=>'pi_ppscw_open_drawer_button_text', 'label'=>__('Button – Calculate Shipping','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'text', 'default'=>'Select delivery location', 'desc'=>__('This message will be shown inside calculate shipping button that will open the form','pisol-product-page-shipping-calculator-woocommerce')),
-
-            array('field'=>'pi_ppscw_update_button_text', 'label'=>__('Button – Update Address','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'text', 'default'=>'Update Address', 'desc'=>__('Address form submission button text','pisol-product-page-shipping-calculator-woocommerce')),
-
-
-             array('field'=>'pi_ppscw_above_shipping_methods', 'label'=>__('Above the shipping method list','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'text', 'default'=>'Shipping methods available for your location:', 'desc'=>__('[country] => shortcode can be used to show the name of the country selected by the customer','pisol-product-page-shipping-calculator-woocommerce')),
-
-             array('field'=>'pi_ppscw_no_shipping_methods_msg', 'label'=>__('When no shipping methods are available','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'text', 'default'=>'No shipping methods available for your location', 'desc'=>""),
-
-             array('field'=>'pi_ppscw_select_variation_msg', 'label'=>__('When no product variation is selected','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'text', 'default'=>'Select variation', 'desc'=>__("This is used on variable product when no variation is selected", 'pisol-product-page-shipping-calculator-woocommerce')),
+            array('field'=>'title', 'class'=> 'bg-dark2 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Shipping price display", 'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category"),
 
              array('field'=>'pi_ppscw_free_shipping_price', 'label'=>__('Price next to free shipping methods','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'radio','value'=> array('nothing' => __('No price is shown', 'pisol-product-page-shipping-calculator-woocommerce'), 'zero' => __('Show "0"', 'pisol-product-page-shipping-calculator-woocommerce')), 'default'=>'nothing', 'desc'=>__("No price shown => It will not show any price next to Free shipping method,<br> Show Zero => $0 will be shown as charge next to free shipping method", 'pisol-product-page-shipping-calculator-woocommerce')),
 
@@ -117,7 +104,7 @@ class pisol_ppscw_basic_option{
                 new pisol_class_form_ppscw($setting, $this->setting_key);
             }
         ?>
-        <input type="submit" class="my-3 btn btn-md btn-primary" value="<?php esc_attr_e('Save Option','pisol-product-page-shipping-calculator-woocommerce'); ?>" />
+        <input type="submit" class="my-3 btn btn-md btn-primary" value="<?php esc_attr_e('Save Changes','pisol-product-page-shipping-calculator-woocommerce'); ?>" />
         </form>
         <div style="display:none;">
         <div id="hidden-shortcode-msg" class="alert alert-warning mt-2">

@@ -1,0 +1,228 @@
+<h2>Introduction</h2>
+<p>Product Page Shipping Calculator shows available shipping methods and costs directly on the WooCommerce product page.</p>
+<p>Customers enter a delivery location and see which shipping methods apply, without adding the product to the cart or going to checkout. Results appear without a page reload.</p>
+<h2>Getting Started</h2>
+<h3>Step 1: Open the settings</h3>
+<p>Go to:</p>
+<p><strong><code>WooCommerce &gt; Shipping Calculator</code></strong></p>
+<p>The settings page has these tabs:</p>
+<ul>
+<li><strong>Basic setting</strong></li>
+<li><strong>Design</strong></li>
+<li><strong>Remove fields</strong></li>
+<li><strong>Popup</strong></li>
+<li><strong>Labels</strong></li>
+<li><strong>Estimate date</strong> / <strong>Show estimate delivery date</strong></li>
+</ul>
+<h3>Step 2: Configure the basic options</h3>
+<p>Open the <strong>Basic setting</strong> tab. Set where the calculator appears, how results load, and how quantity is handled. Open the <strong>Labels</strong> tab to set button text and messages customers see.</p>
+<h3>Step 3: Save the settings</h3>
+<p>Click <strong>Save Changes</strong>.</p>
+<h2>Quick Start</h2>
+<p>For a basic setup:</p>
+<ol>
+<li>Set <strong>Position of the calculator on product page</strong> to <strong>After add to cart button</strong>.</li>
+<li>Set <strong>Shipping calculator form default state</strong> to <strong>Closed by default</strong>.</li>
+<li>Set <strong>Auto calculation of shipping method</strong> to <strong>Enabled</strong>.</li>
+<li>Click <strong>Save Changes</strong>.</li>
+</ol>
+<p>Customers can then click <strong>Select delivery location</strong>, enter an address, and see shipping methods for that address.</p>
+<h2>Plugin Features</h2>
+<ul>
+<li>Show shipping methods and costs on the product page.</li>
+<li>Let customers change delivery location and see updated methods.</li>
+<li>Place calculator before or after Add to cart button, or with shortcode.</li>
+<li>Control where results appear.</li>
+<li>Auto-load results or require manual update.</li>
+<li>Support cached product pages.</li>
+<li>Respect product quantity or ignore it.</li>
+<li>Show single-product cost ignoring rest of cart.</li>
+<li>Customize button texts and result messages.</li>
+<li>Remove unneeded address fields.</li>
+<li>Customize design template and button colors.</li>
+<li>Disable calculator for specific products.</li>
+<li>Support variable products.</li>
+<li>Support delivery location popup flow under Popup tab.</li>
+</ul>
+<h2>Plugin Settings</h2>
+<h3>Position of the calculator on product page</h3>
+<p>Controls where the calculator appears on the product page. Found under <strong>Basic setting</strong>.</p>
+<p><strong>What to select:</strong></p>
+<ul>
+<li><strong>After add to cart button</strong> - shows calculator after the Add to cart button. This is the default.</li>
+<li><strong>Before add to cart button</strong> - shows calculator before the Add to cart button.</li>
+<li><strong>Use shortcode [pi_shipping_calculator] to insert manually</strong> - stops automatic output. Add <code>[pi_shipping_calculator]</code> manually on the product page.</li>
+</ul>
+<p><strong>Example:</strong> Choose shortcode mode and add <code>[pi_shipping_calculator]</code> to the product page content when automatic position does not fit your theme.</p>
+<p>Shortcode works only on product pages. It shows an error when shortcode mode is not enabled. It does not show for virtual or out-of-stock products.</p>
+<h3>Position of the calculator result</h3>
+<p>Controls where the calculated result appears. Found under <strong>Basic setting</strong>.</p>
+<p><strong>What to select:</strong></p>
+<ul>
+<li><strong>Before "Calculate Shipping" button</strong> - default.</li>
+<li><strong>After "Calculate Shipping" button</strong></li>
+<li><strong>Before shipping form (hidden container)</strong> - inside the collapsible form.</li>
+<li><strong>After shipping form (hidden container)</strong> - inside the collapsible form.</li>
+</ul>
+<h3>Shipping calculator form default state</h3>
+<p>Controls whether the address form starts expanded or collapsed.</p>
+<ul>
+<li><strong>Closed by default</strong> - default. Customer clicks the button to expand the form.</li>
+<li><strong>Open by default</strong> - form is visible when page loads.</li>
+</ul>
+<h3>Auto calculation of shipping method</h3>
+<p>Controls whether results load automatically.</p>
+<ul>
+<li><strong>Enabled</strong> - default. Shipping methods load automatically.</li>
+<li><strong>Disabled</strong> - automatic loading is skipped. Customer must click <strong>Update Address</strong>. Before calculation, the message from <strong>When user hasn't entered an address</strong> is shown.</li>
+</ul>
+<h3>Load user location data via AJAX</h3>
+<p>Use this when the product page is cached. The saved customer location is loaded dynamically instead of from cached page content.</p>
+<p><strong>When to use it:</strong> Enable it if caching causes wrong customer location to appear.</p>
+<h3>Product Quantity Field</h3>
+<p>Controls whether the quantity selected on the product page affects the estimate.</p>
+<ul>
+<li><strong>Calculate for 1 unit until the product is in the cart</strong> - default. Uses 1 unit when product is not in cart. When product is already in cart, uses cart quantity.</li>
+<li><strong>Calculate for the quantity selected (more accurate)</strong> - uses quantity from product page plus quantity of same product already in cart.</li>
+</ul>
+<p><strong>Example:</strong> Customer sets quantity to <code>3</code>. With <strong>Calculate for the quantity selected (more accurate)</strong>, estimate uses <code>3</code> plus any same product already in cart.</p>
+<h3>Show shipping cost of the individual product only</h3>
+<p>When enabled, other products in the cart are ignored during calculation. Result reflects only the product being viewed.</p>
+<p><strong>When to use it:</strong> Enable when viewed product has different shipping cost than rest of cart and you want isolated estimate.</p>
+<p><strong>Example:</strong> Cart has product B. Customer views product A. With this enabled, result shows cost for product A only.</p>
+<h3>When user hasn't entered an address</h3>
+<p>Found under <strong>Labels</strong> tab, section <strong>Product page calculator labels</strong>. Message shown when no location is entered yet, or when auto-loading is disabled and no calculation ran.</p>
+<p><strong>Default:</strong> <code>Insert your location to get the shipping method</code></p>
+<h3>Button – Calculate Shipping</h3>
+<p>Found under <strong>Labels</strong> tab, section <strong>Product page calculator labels</strong>. Text inside button that opens the calculator form.</p>
+<p><strong>Default:</strong> <code>Select delivery location</code></p>
+<h3>Button – Update Address</h3>
+<p>Found under <strong>Labels</strong> tab, section <strong>Product page calculator labels</strong>. Submit button inside address form.</p>
+<p><strong>Default:</strong> <code>Update Address</code></p>
+<h3>Above the shipping method list</h3>
+<p>Found under <strong>Labels</strong> tab, section <strong>Product page calculator labels</strong>. Heading shown above list of available methods.</p>
+<p><strong>Default:</strong> <code>Shipping methods available for your location:</code></p>
+<p><strong>What to enter:</strong> You can use <code>[country]</code> to show selected country name.</p>
+<p><strong>Example:</strong> Enter <code>Shipping methods available for [country]:</code>. If customer selects India, heading reads <code>Shipping methods available for India:</code>.</p>
+<h3>When no shipping methods are available</h3>
+<p>Found under <strong>Labels</strong> tab, section <strong>Product page calculator labels</strong>. Message shown when location is entered but its shipping zone has no methods.</p>
+<p><strong>Default:</strong> <code>No shipping methods available for your location</code></p>
+<h3>When no product variation is selected</h3>
+<p>Found under <strong>Labels</strong> tab, section <strong>Product page calculator labels</strong>. Used on variable products before variation is chosen. Calculator stays hidden until in-stock, non-virtual variation is selected.</p>
+<p><strong>Default:</strong> <code>Select variation</code></p>
+<p>If left empty, no message is shown.</p>
+<h3>Price next to free shipping methods</h3>
+<ul>
+<li><strong>No price is shown</strong> - default. Free methods keep normal WooCommerce label.</li>
+<li><strong>Show "0"</strong> - shows <code>0</code> price next to free method.</li>
+</ul>
+<h3>Remove address form fields from product page calculator</h3>
+<p>Found under <strong>Remove fields</strong> tab. Each is on/off. Default is off, meaning field is shown.</p>
+<ul>
+<li><strong>Remove country field</strong></li>
+<li><strong>Remove state field</strong></li>
+<li><strong>Remove Town/City field</strong></li>
+<li><strong>Remove Postcode/Zip field</strong></li>
+</ul>
+<p><strong>Important:</strong> If your shipping zones depend on a field, do not remove it. Zone matching will fail.</p>
+<p><strong>Country field rule:</strong> Country dropdown is removed only when store ships to exactly one country and <strong>Remove country field</strong> is enabled. When store ships to more than one country, this option is not available.</p>
+<p>The same tab has separate options for the popup address form. Those affect popup form only, not product-page calculator.</p>
+<h3>Design template</h3>
+<p>Found under <strong>Design</strong> tab.</p>
+<ul>
+<li><strong>Template 1</strong> - default.</li>
+<li><strong>Old classic template</strong></li>
+</ul>
+<h3>Box showing result of shipping methods</h3>
+<p>Found under <strong>Design</strong> tab.</p>
+<ul>
+<li><strong>Background color of shipping methods</strong> - default light peach gradient.</li>
+<li><strong>Text color of message</strong> - default black.</li>
+<li><strong>Text color of shipping methods name</strong> - default black.</li>
+<li><strong>Text color of shipping charges</strong> - default black.</li>
+</ul>
+<h3>Button colors</h3>
+<p>Found under <strong>Design</strong> tab.</p>
+<ul>
+<li><strong>Calculate shipping button background color</strong></li>
+<li><strong>Calculate shipping button text color</strong> - default white.</li>
+<li><strong>Update address button background color</strong></li>
+<li><strong>Update address button text color</strong> - default white.</li>
+</ul>
+<h3>Disable shipping cost per product</h3>
+<p>Found at <strong>Products &gt; Edit product &gt; Shipping calculator</strong>.</p>
+<p><strong>Setting:</strong> <strong>Disable shipping cost</strong></p>
+<ul>
+<li><strong>Select option</strong> - no change.</li>
+<li><strong>Disable calculator</strong> - hides calculator for that product.</li>
+<li><strong>Enable calculator</strong> - keeps calculator enabled for that product.</li>
+</ul>
+<p>Calculator also does not show for virtual products. Tab is not shown for grouped products.</p>
+<h2>Examples</h2>
+<h3>Show methods after Add to cart button</h3>
+<p><strong>Goal:</strong> Standard calculator below Add to cart.</p>
+<p><strong>Configuration:</strong></p>
+<table>
+<thead><tr><th>Option</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td>Position of the calculator on product page</td><td>After add to cart button</td></tr>
+<tr><td>Shipping calculator form default state</td><td>Closed by default</td></tr>
+<tr><td>Auto calculation of shipping method</td><td>Enabled</td></tr>
+</tbody>
+</table>
+<p><strong>Result:</strong> Customer clicks <strong>Select delivery location</strong>, enters address, sees methods without page reload.</p>
+<h3>Manual placement with shortcode</h3>
+<p><strong>Goal:</strong> Place calculator manually when theme position does not fit.</p>
+<p><strong>Configuration:</strong> Set <strong>Position of the calculator on product page</strong> to <strong>Use shortcode [pi_shipping_calculator] to insert manually</strong>.</p>
+<p><strong>Result:</strong> Add <code>[pi_shipping_calculator]</code> to product page. Automatic output stops.</p>
+<h3>Respect quantity field</h3>
+<p><strong>Goal:</strong> Show shipping based on selected quantity.</p>
+<p><strong>Configuration:</strong> Set <strong>Product Quantity Field</strong> to <strong>Calculate for the quantity selected (more accurate)</strong>.</p>
+<p><strong>Result:</strong> Quantity <code>3</code> on product page produces estimate for <code>3</code> plus same product already in cart.</p>
+<h3>Single-product estimate with other items in cart</h3>
+<p><strong>Goal:</strong> Ignore rest of cart.</p>
+<p><strong>Configuration:</strong> Enable <strong>Show shipping cost of the individual product only</strong>.</p>
+<p><strong>Result:</strong> Viewing product A while cart has product B shows cost for product A only.</p>
+<h3>Show selected country in heading</h3>
+<p><strong>Goal:</strong> Personalize result heading.</p>
+<p><strong>Configuration:</strong> Set <strong>Above the shipping method list</strong> to <code>Shipping methods available for [country]:</code></p>
+<p><strong>Result:</strong> Selecting India shows <code>Shipping methods available for India:</code>.</p>
+<h2>Important Notes</h2>
+<ul>
+<li>WooCommerce must be active. Without it, plugin shows admin notice and stops loading.</li>
+<li>Set <strong>WooCommerce &gt; Settings &gt; Default customer location</strong> to <strong>Shop base address</strong> or geolocation option for reliable results. Empty value triggers admin warning on plugin settings screen.</li>
+<li>Do not remove a form field that shipping zones depend on. Zone matching will fail.</li>
+<li><strong>Remove country field</strong> works only when store ships to single country. For multi-country stores, option is disabled with notice.</li>
+<li>Default selected country comes from customer shipping country. Single-country stores can auto-select it.</li>
+<li>Price and tax display follow WooCommerce tax settings.</li>
+<li>For variable products, customer must select variation first. Out-of-stock or virtual variations keep calculator hidden.</li>
+<li>Estimate date tab needs Estimate Delivery Date plugin. Without it, that tab shows install instructions instead of working settings.</li>
+</ul>
+<h2>FAQ</h2>
+<h3>Where is the calculator positioned?</h3>
+<p>Under <strong>Basic setting &gt; Position of the calculator on product page</strong>: before or after Add to cart button, or manually with <code>[pi_shipping_calculator]</code>.</p>
+<h3>Where is the result positioned?</h3>
+<p>Under <strong>Basic setting &gt; Position of the calculator result</strong>. Four positions: before or after Calculate Shipping button, or before or after shipping form inside hidden container.</p>
+<h3>How is quantity handled?</h3>
+<p>See <strong>Product Quantity Field</strong>. Use <strong>Calculate for the quantity selected (more accurate)</strong> when shipping cost depends on quantity.</p>
+<h3>Can calculator ignore rest of cart?</h3>
+<p>Yes. Enable <strong>Show shipping cost of the individual product only</strong>.</p>
+<h3>Can a single product opt out?</h3>
+<p>Yes. Edit product, open <strong>Shipping calculator</strong> tab, set <strong>Disable shipping cost</strong> to <strong>Disable calculator</strong>.</p>
+<h3>Does it work for variable products?</h3>
+<p>Yes. Customer must select variation first. <strong>When no product variation is selected</strong> message covers unselected state.</p>
+<h3>Why is country removal unavailable?</h3>
+<p>That option works only when store ships to single country. Set <strong>WooCommerce &gt; Settings &gt; General &gt; Shipping location(s)</strong> to one country first.</p>
+<h2>Troubleshooting</h2>
+<h3>Calculator does not appear on a product</h3>
+<p>Check per-product <strong>Shipping calculator</strong> setting is not <strong>Disable calculator</strong>, check product is not virtual, and check <strong>Position of the calculator on product page</strong>.</p>
+<h3>Shortcode shows an error</h3>
+<p><strong>Position of the calculator on product page</strong> must be set to <strong>Use shortcode [pi_shipping_calculator] to insert manually</strong>, and shortcode must be on product page.</p>
+<h3>Wrong location loads from cache</h3>
+<p>Enable <strong>Load user location data via AJAX</strong>.</p>
+<h3>Result ignores quantity field</h3>
+<p>Set <strong>Product Quantity Field</strong> to <strong>Calculate for the quantity selected (more accurate)</strong>.</p>
+<h3>Result reflects other cart items</h3>
+<p>Enable <strong>Show shipping cost of the individual product only</strong>.</p>
+<h3>No methods for valid address</h3>
+<p>Check <strong>WooCommerce &gt; Settings &gt; Shipping &gt; Shipping zones</strong> has matching zone with at least one method, and check removed fields are not needed for zone matching.</p>

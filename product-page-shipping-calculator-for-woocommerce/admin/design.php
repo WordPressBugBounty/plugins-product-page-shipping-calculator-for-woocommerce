@@ -41,7 +41,7 @@ class pisol_ppscw_design_setting{
 
             array('field'=>'title', 'class'=> 'bg-dark2 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Box showing result of shipping methods", 'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category"),
 
-            array('field'=>'pi_ppscw_msg_background_color', 'label'=>__('Background color of shipping methods','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'color', 'default'=> '#cccccc', 'desc'=>__('Background color of the area where the result are shown','pisol-product-page-shipping-calculator-woocommerce')),
+            array('field'=>'pi_ppscw_msg_background_color', 'label'=>__('Background color of shipping methods','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'gradient', 'default'=> array('color1' => "#FFF4EF", 'color2' => "#FFE0D3", 'direction' => 135), 'desc'=>__('Background color of the area where the result are shown','pisol-product-page-shipping-calculator-woocommerce')),
             
             array('field'=>'pi_ppscw_msg_font_color', 'label'=>__('Text color of message','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'color', 'default'=> '#000000', 'desc'=>__('Text color of the resulting text','pisol-product-page-shipping-calculator-woocommerce')),
 
@@ -51,11 +51,11 @@ class pisol_ppscw_design_setting{
 
             array('field'=>'title', 'class'=> 'bg-dark2 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Button", 'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category"),
 
-            array('field'=>'pi_ppscw_calculate_shipping_bg_color', 'label'=>__('Calculate shipping button background color','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'color', 'default'=> '#ee6443', 'desc'=>''),
+            array('field'=>'pi_ppscw_calculate_shipping_bg_color', 'label'=>__('Calculate shipping button background color','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'gradient', 'default'=> array('color1' => "#EE6A47", 'color2' => "#D9472B", 'direction' => 135), 'desc'=>''),
 
             array('field'=>'pi_ppscw_calculate_shipping_text_color', 'label'=>__('Calculate shipping button text color','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'color', 'default'=> '#ffffff', 'desc'=>''),
 
-            array('field'=>'pi_ppscw_update_address_bg_color', 'label'=>__('Update address button background color','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'color', 'default'=> '#ee6443', 'desc'=>''),
+            array('field'=>'pi_ppscw_update_address_bg_color', 'label'=>__('Update address button background color','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'gradient', 'default'=> array('color1' => "#EE6A47", 'color2' => "#D9472B", 'direction' => 135), 'desc'=>''),
 
             array('field'=>'pi_ppscw_update_address_text_color', 'label'=>__('Update address button text color','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'color', 'default'=> '#ffffff', 'desc'=>''),
         );
@@ -95,7 +95,7 @@ class pisol_ppscw_design_setting{
                 new pisol_class_form_ppscw($setting, $this->setting_key);
             }
         ?>
-        <input type="submit" class="my-3 btn btn-primary btn-md" value="<?php esc_attr_e('Save Option','pisol-product-page-shipping-calculator-woocommerce'); ?>" />
+        <input type="submit" class="my-3 btn btn-primary btn-md" value="<?php esc_attr_e('Save Changes','pisol-product-page-shipping-calculator-woocommerce'); ?>" />
         </form>
        <?php
     }

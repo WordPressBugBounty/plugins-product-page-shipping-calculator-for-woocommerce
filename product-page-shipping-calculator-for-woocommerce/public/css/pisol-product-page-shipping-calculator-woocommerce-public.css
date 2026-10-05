@@ -59,12 +59,12 @@
 }
 
 .button.pisol-shipping-calculator-button {
-    background-color: var(--pisol-btn-calc-bg, #ee6443);
+    background: var(--pisol-btn-calc-bg, #ee6443);
     color: var(--pisol-btn-calc-color, #ffffff);
 }
 
 .button.pisol-update-address-button {
-    background-color: var(--pisol-btn-update-bg, #ee6443);
+    background: var(--pisol-btn-update-bg, #ee6443);
     color: var(--pisol-btn-update-color, #ffffff);
 }
 

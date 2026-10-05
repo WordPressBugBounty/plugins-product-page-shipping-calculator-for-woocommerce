@@ -42,7 +42,7 @@ class pisol_ppscw_badge_option{
 
                 array('field'=>'pi_ppscw_badge_icon', 'type'=>'image', 'default'=>'','label'=>__('Button Icon image','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
 
-                array('field'=>'pi_ppscw_badge_bg_color', 'type'=>'color', 'default'=>'#e74c3c','label'=>__('Button background color','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
+                array('field'=>'pi_ppscw_badge_bg_color', 'type'=>'gradient', 'default'=>array('color1' => "#EE6A47", 'color2' => "#D9472B", 'direction' => 135),'label'=>__('Button background color','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
                 
                 array('field'=>'pi_ppscw_badge_text_color', 'type'=>'color', 'default'=>'#ffffff','label'=>__('Button text color','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
 
@@ -50,13 +50,9 @@ class pisol_ppscw_badge_option{
 
                 array('field'=>'pi_ppscw_address_form_layout', 'label'=>__('Popup layout','pisol-product-page-shipping-calculator-woocommerce'),'default'=>'pi-vertical', 'type'=>'radio','value'=> array('pi-vertical'=> __('Vertical layout','pisol-product-page-shipping-calculator-woocommerce'), 'pi-horizontal' => __('Horizontal layout','pisol-product-page-shipping-calculator-woocommerce'))),
 
-                array('field'=>'pi_ppscw_popup_title', 'type'=>'text', 'default'=>'Set your delivery location','label'=>__('Popup title','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
+               
 
-                array('field'=>'pi_ppscw_details_saved', 'label'=>__('Your details are saved','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'text', 'default'=>__('Your details are saved','pisol-product-page-shipping-calculator-woocommerce'), 'desc'=>__("This is shown when the details are saved from the popup form", 'pisol-product-page-shipping-calculator-woocommerce')),
-
-                array('field' => 'pi_ppscw_popup_update_address_title', 'type' => 'text', 'default' => 'Update Address','label' => __('Update address button','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
-
-                array('field'=>'pi_ppscw_popup_header_bg_color', 'type'=>'color', 'default'=>'#e74c3c','label'=>__('Popup header background color','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
+                array('field'=>'pi_ppscw_popup_header_bg_color', 'type'=>'gradient', 'default'=>array('color1' => "#EE6A47", 'color2' => "#D9472B", 'direction' => 135),'label'=>__('Popup header background color','pisol-product-page-shipping-calculator-woocommerce'), 'desc'=>""),
 
                 array('field'=>'pi_ppscw_popup_header_text_color', 'type'=>'color', 'default'=>'#FFFFFF','label'=>__('Popup header text color','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
                 
@@ -98,7 +94,7 @@ class pisol_ppscw_badge_option{
                 new pisol_class_form_ppscw($setting, $this->setting_key);
             }
         ?>
-        <input type="submit" name="submit" id="submit" class="btn btn-primary btn-md my-3" value="<?php echo esc_attr__('Save Option','pisol-product-page-shipping-calculator-woocommerce'); ?>">
+        <input type="submit" name="submit" id="submit" class="btn btn-primary btn-md my-3" value="<?php echo esc_attr__('Save Changes','pisol-product-page-shipping-calculator-woocommerce'); ?>">
         </form>
        <?php
     }

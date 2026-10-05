@@ -15,6 +15,8 @@ class Pi_shipping_calc_Analytics{
     private $plugin_name;
     private $enable_tracking;
     private $enable_tracking_action;
+    private $analytics_start_date;
+    private $show_after_this_days;
     public function __construct($plugin_name, $plugin_path, $version) {
         $this->plugin_name = $plugin_name;
         $this->plugin_path = $plugin_path;
@@ -25,6 +27,10 @@ class Pi_shipping_calc_Analytics{
 
         $this->enable_tracking = 'pisol_'.$this->plugin_slug;
         $this->enable_tracking_action = 'pisol_'.$this->plugin_slug.'_action';
+
+        $this->analytics_start_date = 'pisol_analytics_'.$this->plugin_slug.'_start_date';
+
+        $this->show_after_this_days = 30;
         
 
         $this->version = $version;
@@ -42,6 +48,10 @@ class Pi_shipping_calc_Analytics{
     }
 
     public function show_tracker_notice() {
+        $activation_time = $this->getInstallationDate();
+        if(current_time('timestamp') < strtotime($activation_time." +{$this->show_after_this_days} days")) {
+            return;
+        }
         //delete_option($this->enable_tracking);
         if (!empty(get_option($this->enable_tracking, ''))) {
             return; 
@@ -49,20 +59,20 @@ class Pi_shipping_calc_Analytics{
 
         $notice = '<div class="notice notice-error is-dismissible">';
         $notice .= '<h4>Help to Improve ' . esc_html($this->plugin_name) . ' plugin</h4>';
-        $notice .= '<p>'.__("Hi, your support can make a big difference!", 'product-page-shipping-calculator-woocommerce').'</p>';
-        $notice .= '<p>'.__("We collect only technical data — including the plugin version, WordPress version, WooCommerce version, and site url — solely to improve compatibility and enhance plugin features.", 'product-page-shipping-calculator-woocommerce').'</p>';
+        $notice .= '<p>'.esc_html__("Hi, your support can make a big difference!", 'advanced-free-flat-shipping-woocommerce').'</p>';
+        $notice .= '<p>'.esc_html__("We collect only technical data — including the plugin version, WordPress version, WooCommerce version, and site url — solely to improve compatibility and enhance plugin features.", 'advanced-free-flat-shipping-woocommerce').'</p>';
 
         $notice .= '<p style="display: flex; justify-content: space-between; margin-top: 10px;">';
 
         $notice .= sprintf(
             '<a href="%s" class="button">%s</a>',
             esc_url(admin_url('admin-post.php?enable=0&action=' . $this->enable_tracking_action)),
-            __('I Don\'t Help', 'product-page-shipping-calculator-woocommerce')
+            esc_html__('I Don\'t Help', 'advanced-free-flat-shipping-woocommerce')
         );
         $notice .= sprintf(
             '<a href="%s" class="button button-primary" style="margin-right:20px; padding-left:30px; padding-right:30px;">%s</a>',
             esc_url(admin_url('admin-post.php?enable=1&action=' . $this->enable_tracking_action)),
-            __('I Will Help', 'product-page-shipping-calculator-woocommerce')
+            esc_html__('I Will Help', 'advanced-free-flat-shipping-woocommerce')
         );
         
         $notice .= '</p>';
@@ -142,6 +152,7 @@ class Pi_shipping_calc_Analytics{
             });
         });
         ';
+        wp_enqueue_script('jquery');
 
         wp_add_inline_script('jquery', $js);
 
@@ -213,13 +224,13 @@ class Pi_shipping_calc_Analytics{
     }
 
     public function handle_deactivation_form() {
-        if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'pi_deactivate_nonce_' . $this->plugin_slug)) {
-            wp_die(esc_html__('Security check failed', 'product-page-shipping-calculator-woocommerce'));
+        if (!isset($_POST['nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['nonce'])), 'pi_deactivate_nonce_' . $this->plugin_slug)) {
+            wp_die(esc_html__('Security check failed', 'advanced-free-flat-shipping-woocommerce'));
         }
 
-        $plugin_slug = sanitize_text_field($_POST['plugin_slug'] ?? '');
-        $message = sanitize_textarea_field($_POST['message'] ?? '');
-        $reason = sanitize_text_field($_POST['reason_radio'] ?? '');
+        $plugin_slug = sanitize_text_field(wp_unslash($_POST['plugin_slug'] ?? ''));
+        $message = sanitize_textarea_field(wp_unslash($_POST['message'] ?? ''));
+        $reason = sanitize_text_field(wp_unslash($_POST['reason_radio'] ?? ''));
         // Combine reason and message, prioritizing reason if message is empty
         if (!empty($reason) && !empty($message)) {
             $message = $reason . ': ' . $message;
@@ -227,13 +238,13 @@ class Pi_shipping_calc_Analytics{
             $message = $reason;
         }
 
-        $action_type = sanitize_text_field($_POST['action_type'] ?? '');
+        $action_type = sanitize_text_field(wp_unslash($_POST['action_type'] ?? ''));
 
         if (is_multisite() && is_plugin_active_for_network($this->plugin_path)) {
             if (is_super_admin()) {
                 deactivate_plugins($this->plugin_path, false, true); // network-wide
             } else {
-                wp_die(esc_html__('You do not have permission to deactivate a network plugin.', 'product-page-shipping-calculator-woocommerce'));
+                wp_die(esc_html__('You do not have permission to deactivate a network plugin.', 'advanced-free-flat-shipping-woocommerce'));
             }
         } else {
             deactivate_plugins($this->plugin_path); // normal
@@ -249,11 +260,29 @@ class Pi_shipping_calc_Analytics{
         exit;
     }
 
+    function getInstallationDate(){
+        $get_install_date = get_option($this->analytics_start_date);
+        if(empty($get_install_date) || !$this->validateDate($get_install_date)){
+            $now = current_time( "Y/m/d" );
+            add_option( $this->analytics_start_date, $now );
+            return $now;
+        }
+        return $get_install_date;
+    }
+
+    function validateDate($date, $format = 'Y/m/d'){
+        if ( empty($date) ) return false;
+        
+        $d = \DateTime::createFromFormat($format, $date);
+        // The Y ( 4 digits year ) returns TRUE for any integer with any number of digits so changing the comparison from == to === fixes the issue.
+        return $d && $d->format($format) === $date;
+    }
+
 
 }
 
 new Pi_shipping_calc_Analytics(
     'WooCommerce Shipping Calculator',
-    'product-page-shipping-calculator-woocommerce/pisol-product-page-shipping-calculator-woocommerce.php',
+    'product-page-shipping-calculator-for-woocommerce/pisol-product-page-shipping-calculator-woocommerce.php',
     PISOL_PRODUCT_PAGE_SHIPPING_CALCULATOR_WOOCOMMERCE_VERSION
 );

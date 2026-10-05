@@ -88,7 +88,7 @@ class pisol_ppscw_estimate_setting{
                 new pisol_class_form_ppscw($setting, $this->setting_key);
             }
         ?>
-        <input type="submit" class="my-3 btn btn-primary btn-md" value="<?php esc_attr_e('Save Option','pisol-product-page-shipping-calculator-woocommerce'); ?>" />
+        <input type="submit" class="my-3 btn btn-primary btn-md" value="<?php esc_attr_e('Save Changes','pisol-product-page-shipping-calculator-woocommerce'); ?>" />
         </form>
        <?php
     }
