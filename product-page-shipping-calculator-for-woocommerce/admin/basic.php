@@ -32,9 +32,9 @@ class pisol_ppscw_basic_option{
         $this->active_tab = $this->tab != "" ? $this->tab : 'default';
 
         $this->settings = array(
-            array('field'=>'title', 'class'=> 'bg-dark2 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Position", 'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category", 'desc'=> __("Position of the shipping calculator on the product page", 'pisol-product-page-shipping-calculator-woocommerce')),
+            array('field'=>'title', 'class'=> 'bg-dark2 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Position", 'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category", 'desc'=> __("Position of the shipping calculator on the product page.", 'pisol-product-page-shipping-calculator-woocommerce')),
 
-            array('field'=>'pi_ppscw_calc_position', 'label'=>__('Position of the calculator on product page','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'radio','value'=> array('woocommerce_after_add_to_cart_form' => __('After add to cart button', 'pisol-product-page-shipping-calculator-woocommerce'), 'woocommerce_before_add_to_cart_form' => __('Before add to cart button', 'pisol-product-page-shipping-calculator-woocommerce'), 'shortcode'=> __('Use shortcode [pi_shipping_calculator] to insert manually', 'pisol-product-page-shipping-calculator-woocommerce')), 'default'=>'woocommerce_after_add_to_cart_form', 'desc'=>__("Choose where the calculator appears on the product page.", 'pisol-product-page-shipping-calculator-woocommerce')),
+            array('field'=>'pi_ppscw_calc_position', 'label'=>__('Position of the calculator on the product page','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'radio','value'=> array('woocommerce_after_add_to_cart_form' => __('After add to cart button', 'pisol-product-page-shipping-calculator-woocommerce'), 'woocommerce_before_add_to_cart_form' => __('Before add to cart button', 'pisol-product-page-shipping-calculator-woocommerce'), 'shortcode'=> __('Use shortcode [pi_shipping_calculator] to insert manually', 'pisol-product-page-shipping-calculator-woocommerce')), 'default'=>'woocommerce_after_add_to_cart_form', 'desc'=>__("Choose where the calculator appears on the product page.", 'pisol-product-page-shipping-calculator-woocommerce')),
 
             array('field'=>'pi_ppscw_result_position', 'label'=>__('Position of the calculator result','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'radio','value'=> array(
                 'pi_ppscw_before_calculate_button' => __('Before "Calculate Shipping" button', 'pisol-product-page-shipping-calculator-woocommerce'), 
@@ -55,17 +55,20 @@ class pisol_ppscw_basic_option{
 
             array('field'=>'title', 'class'=> 'bg-dark2 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Show Shipping Based on Quantity Field", 'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category"),
 
-            array('field'=>'pi_ppscw_consider_quantity_field', 'label'=>__('Product Quantity Field','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'radio','value'=> array('consider-quantity' => __('Calculate for the quantity selected (more accurate)', 'pisol-product-page-shipping-calculator-woocommerce'), 'dont-consider-quantity-field' => __('Calculate for 1 unit until the product is in the cart', 'pisol-product-page-shipping-calculator-woocommerce')), 'default'=>'dont-consider-quantity-field', 'desc'=>__("Choose how many units the calculator should use when estimating shipping. Using the selected quantity gives a more accurate result because shipping rules often depend on quantity, weight, or total cost", 'pisol-product-page-shipping-calculator-woocommerce')),
+            array('field'=>'pi_ppscw_consider_quantity_field', 'label'=>__('Product Quantity Field','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'radio','value'=> array('consider-quantity' => __('Calculate for the quantity selected (more accurate)', 'pisol-product-page-shipping-calculator-woocommerce'), 'dont-consider-quantity-field' => __('Calculate for 1 unit until the product is in the cart', 'pisol-product-page-shipping-calculator-woocommerce')), 'default'=>'dont-consider-quantity-field', 'desc'=>__("Choose how many units the calculator should use when estimating shipping. Using the selected quantity gives a more accurate result because shipping rules often depend on quantity, weight, or total cost.", 'pisol-product-page-shipping-calculator-woocommerce')),
 
-            /** In future default should be  turned on */
-            array('field'=>'pi_ppscw_ignore_cart_product', 'label' => __('Show shipping cost of the individual product only','pisol-product-page-shipping-calculator-woocommerce'), 'type' => 'switch', 'default' => 0, 'desc' => __('If enabled, the shipping cost will be shown for the product that user is checking for, ignoring the other product present in customer cart', 'pisol-product-page-shipping-calculator-woocommerce')),
+            /** In future default should be turned on */
+            array('field'=>'pi_ppscw_ignore_cart_product', 'label' => __('Show shipping cost of the individual product only','pisol-product-page-shipping-calculator-woocommerce'), 'type' => 'switch', 'default' => 0, 'desc' => __('If enabled, the shipping cost will be shown for the product that the user is checking for, ignoring the other products present in the customer cart.', 'pisol-product-page-shipping-calculator-woocommerce')),
 
 
             array('field'=>'title', 'class'=> 'bg-dark2 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Shipping price display", 'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category"),
 
              array('field'=>'pi_ppscw_free_shipping_price', 'label'=>__('Price next to free shipping methods','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'radio','value'=> array('nothing' => __('No price is shown', 'pisol-product-page-shipping-calculator-woocommerce'), 'zero' => __('Show "0"', 'pisol-product-page-shipping-calculator-woocommerce')), 'default'=>'nothing', 'desc'=>__("No price shown => It will not show any price next to Free shipping method,<br> Show Zero => $0 will be shown as charge next to free shipping method", 'pisol-product-page-shipping-calculator-woocommerce')),
 
-             
+             array('field'=>'title', 'class'=> 'bg-dark2 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Default calculator visibility", 'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category"),
+
+             array('field'=>'pi_ppscw_enable_by_default', 'label'=>__('Enable calculator for all products by default','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'radio','value'=> array('enabled' => __('Enable', 'pisol-product-page-shipping-calculator-woocommerce'), 'disabled' => __('Disable', 'pisol-product-page-shipping-calculator-woocommerce')), 'default'=>'enabled', 'desc'=>__("This applies only to products where Product Level Settings > Shipping calculator is set to Use global setting (or no choice is made yet).<br>Enable => calculator shows on new products by default.<br>Disable => calculator stays hidden on new products until you manually set Enable calculator for that product.<br>An explicit Enable calculator / Disable calculator choice on the product always overrides this setting.", 'pisol-product-page-shipping-calculator-woocommerce')),
+
              
         );
 
@@ -108,7 +111,7 @@ class pisol_ppscw_basic_option{
         </form>
         <div style="display:none;">
         <div id="hidden-shortcode-msg" class="alert alert-warning mt-2">
-            Add shipping calculator manually on product page by shortcode <b>[pi_shipping_calculator]</b>
+            Add the shipping calculator manually on the product page by shortcode <b>[pi_shipping_calculator]</b>.
         </div>
         </div>
        <?php

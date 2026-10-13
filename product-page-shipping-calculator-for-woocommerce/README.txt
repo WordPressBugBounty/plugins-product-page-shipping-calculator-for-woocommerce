@@ -3,7 +3,7 @@ Contributors: rajeshsingh520
 Tags: shipping calculator, shipping estimate, shipping cost, check WooCommerce pincode, check WooCommerce shipping
 Requires at least: 4.7
 Tested up to: 7.1
-Stable tag: 1.3.49.94
+Stable tag: 1.3.49.96
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -145,7 +145,15 @@ Enable the option of "Load user location data by AJAX to avoid page caching"; th
  = Is it HPOS compatible =
 Yes, it is HPOS compatible
 
+= How can I disable the shipping calculator by default and enable it only for selected products? =
+Go to **WooCommerce → Settings → Shipping Calculator** and set **Enable calculator for all products by default** to **Disable**. Then, edit the individual products where you want the calculator to appear and set their **Shipping calculator** option to **Enable calculator**.
+
+The calculator will remain hidden on all other products unless you explicitly enable it for them.
+
 == Changelog ==
+
+= 1.3.49.96 =
+* Global option to enable or disable calculator on product by default
 
 = 1.3.49.94 =
 * Background gradient option added for popup header and badge button

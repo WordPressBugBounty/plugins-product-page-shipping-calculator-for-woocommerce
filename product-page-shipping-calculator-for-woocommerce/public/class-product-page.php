@@ -77,9 +77,7 @@ class pisol_ppscw_product_page_calculator{
 			return;
 		}
 
-		$disable_product = get_post_meta($product_id, 'pisol_disable_shipping_calculator', true);
-
-		if($disable_product === 'disable') return;
+		if(!self::isCalculatorEnabled($product_id)) return;
 
 		$button_text = get_option('pi_ppscw_open_drawer_button_text','Select delivery location');
 		$update_address_btn_text = get_option('pi_ppscw_update_button_text','Update Address');
@@ -91,6 +89,16 @@ class pisol_ppscw_product_page_calculator{
 		if(is_object($product) && $product->is_virtual()) return true;
 
 		return $val;
+	}
+
+	static function isCalculatorEnabled($product_id){
+		$product_choice = get_post_meta($product_id, 'pisol_disable_shipping_calculator', true);
+
+		if($product_choice === 'enable') return true;
+
+		if($product_choice === 'disable') return false;
+
+		return get_option('pi_ppscw_enable_by_default', 'enabled') !== 'disabled';
 	}
 
 	static function applyShipping(){

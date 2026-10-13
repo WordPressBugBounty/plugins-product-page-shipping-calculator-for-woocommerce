@@ -24,12 +24,12 @@ class pisol_ppscw_product_options{
     function calculatorSetting() {
 		echo '<div id="pisol_ppscw" class="panel woocommerce_options_panel hidden">';
 		woocommerce_wp_select( array(
-            'label' => __("Disable shipping cost", 'pisol-product-page-shipping-calculator-woocommerce'), 
-            'id' => 'pisol_disable_shipping_calculator', 
-            'name' => 'pisol_disable_shipping_calculator', 
-            'description' => __("You can disable shipping calculation for this product",'pisol-product-page-shipping-calculator-woocommerce'),
+            'label' => __("Disable shipping cost", 'pisol-product-page-shipping-calculator-woocommerce'),
+            'id' => 'pisol_disable_shipping_calculator',
+            'name' => 'pisol_disable_shipping_calculator',
+            'description' => __("Choose Enable calculator or Disable calculator to override the global default for this product, or keep Use global setting to follow Basic setting > Default calculator visibility",'pisol-product-page-shipping-calculator-woocommerce'),
             'options' => array(
-              '' => __('Select option','pisol-product-page-shipping-calculator-woocommerce'),
+              '' => __('Use global setting','pisol-product-page-shipping-calculator-woocommerce'),
               'disable'=>__('Disable calculator', 'pisol-product-page-shipping-calculator-woocommerce'),
               'enable'=>__('Enable calculator', 'pisol-product-page-shipping-calculator-woocommerce')
             )

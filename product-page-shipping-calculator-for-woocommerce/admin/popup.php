@@ -40,7 +40,7 @@ class pisol_ppscw_badge_option{
 
                 array('field'=>'pi_ppscw_badge_text', 'type'=>'text', 'default'=>'Delivery Location','label'=>__('Text shown inside the button','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
 
-                array('field'=>'pi_ppscw_badge_icon', 'type'=>'image', 'default'=>'','label'=>__('Button Icon image','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
+                array('field'=>'pi_ppscw_badge_icon', 'type'=>'image', 'default'=>'','label'=>__('Button icon image','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
 
                 array('field'=>'pi_ppscw_badge_bg_color', 'type'=>'gradient', 'default'=>array('color1' => "#EE6A47", 'color2' => "#D9472B", 'direction' => 135),'label'=>__('Button background color','pisol-product-page-shipping-calculator-woocommerce'),'desc'=>""),
                 

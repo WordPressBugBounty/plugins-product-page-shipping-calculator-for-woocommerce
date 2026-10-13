@@ -41,11 +41,11 @@ class pisol_ppscw_design_setting{
 
             array('field'=>'title', 'class'=> 'bg-dark2 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Box showing result of shipping methods", 'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category"),
 
-            array('field'=>'pi_ppscw_msg_background_color', 'label'=>__('Background color of shipping methods','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'gradient', 'default'=> array('color1' => "#FFF4EF", 'color2' => "#FFE0D3", 'direction' => 135), 'desc'=>__('Background color of the area where the result are shown','pisol-product-page-shipping-calculator-woocommerce')),
+            array('field'=>'pi_ppscw_msg_background_color', 'label'=>__('Background color of shipping methods','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'gradient', 'default'=> array('color1' => "#FFF4EF", 'color2' => "#FFE0D3", 'direction' => 135), 'desc'=>__('Background color of the area where the results are shown','pisol-product-page-shipping-calculator-woocommerce')),
             
             array('field'=>'pi_ppscw_msg_font_color', 'label'=>__('Text color of message','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'color', 'default'=> '#000000', 'desc'=>__('Text color of the resulting text','pisol-product-page-shipping-calculator-woocommerce')),
 
-            array('field'=>'pi_ppscw_msg_font_color_shipping_method', 'label'=>__('Text color of shipping methods name','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'color', 'default'=> '#000000', 'desc'=>__('Text color of the shipping method name','pisol-product-page-shipping-calculator-woocommerce')),
+            array('field'=>'pi_ppscw_msg_font_color_shipping_method', 'label'=>__('Text color of shipping method name','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'color', 'default'=> '#000000', 'desc'=>__('Text color of the shipping method name','pisol-product-page-shipping-calculator-woocommerce')),
 
             array('field'=>'pi_ppscw_msg_font_color_shipping_cost', 'label'=>__('Text color of shipping charges','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'color', 'default'=> '#000000', 'desc'=>__('Text color of the shipping method price','pisol-product-page-shipping-calculator-woocommerce')),
 

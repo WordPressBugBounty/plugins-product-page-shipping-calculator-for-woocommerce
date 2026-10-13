@@ -34,9 +34,9 @@ class pisol_ppscw_labels_setting{
 
              array('field'=>'title', 'class'=> 'bg-dark2 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Product page calculator labels", 'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category"),
 
-             array('field'=>'pi_ppscw_no_address_added_yet', 'label'=>__('When user hasn\'t entered an address','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'text', 'default'=>'Insert your location to get the shipping method', 'desc'=>"Insert your location to get the shipping method"),
+             array('field'=>'pi_ppscw_no_address_added_yet', 'label'=>__('When a user hasn\'t entered an address','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'text', 'default'=>'Insert your location to get the shipping method', 'desc'=>"Insert your location to get the shipping method"),
             
-            array('field'=>'pi_ppscw_open_drawer_button_text', 'label'=>__('Button – Calculate Shipping','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'text', 'default'=>'Select delivery location', 'desc'=>__('This message will be shown inside calculate shipping button that will open the form','pisol-product-page-shipping-calculator-woocommerce')),
+            array('field'=>'pi_ppscw_open_drawer_button_text', 'label'=>__('Button – Calculate Shipping','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'text', 'default'=>'Select delivery location', 'desc'=>__('This message will be shown inside the calculate shipping button that will open the form','pisol-product-page-shipping-calculator-woocommerce')),
 
             array('field'=>'pi_ppscw_update_button_text', 'label'=>__('Button – Update Address','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'text', 'default'=>'Update Address', 'desc'=>__('Address form submission button text','pisol-product-page-shipping-calculator-woocommerce')),
 
@@ -45,7 +45,7 @@ class pisol_ppscw_labels_setting{
 
              array('field'=>'pi_ppscw_no_shipping_methods_msg', 'label'=>__('When no shipping methods are available','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'text', 'default'=>'No shipping methods available for your location', 'desc'=>""),
 
-             array('field'=>'pi_ppscw_select_variation_msg', 'label'=>__('When no product variation is selected','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'text', 'default'=>'Select variation', 'desc'=>__("This is used on variable product when no variation is selected", 'pisol-product-page-shipping-calculator-woocommerce')),
+             array('field'=>'pi_ppscw_select_variation_msg', 'label'=>__('When no product variation is selected','pisol-product-page-shipping-calculator-woocommerce'),'type'=>'text', 'default'=>'Select variation', 'desc'=>__("This is used on a variable product when no variation is selected", 'pisol-product-page-shipping-calculator-woocommerce')),
 
              array('field'=>'title', 'class'=> 'bg-dark2 text-light', 'class_title'=>'text-light font-weight-light h4', 'label'=>__("Address form popup labels", 'pisol-product-page-shipping-calculator-woocommerce'), 'type'=>"setting_category"),
 
